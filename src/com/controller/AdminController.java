@@ -1,28 +1,41 @@
+
 package com.controller;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.annotation.Resource;
+import javax.validation.Valid;
 
-@WebServlet("/in")
-public class AdminController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.pojo.Product;
+import com.service.AdminService;
+
+@Controller
+@RequestMapping("/admin")
+public class AdminController {
+	@Resource
+	private AdminService adminService;
+	
+	@RequestMapping(value="/admin_goodsmgr",method=RequestMethod.GET)
+	public String manageAddPlate() {
+		return "admin_goodsmgr";
+	}
+	@RequestMapping(value="/admin_goodsmgr",method=RequestMethod.POST)
+	public String manageAddPlate(@Valid Product product,BindingResult bindingResult,
+			Model model) {
+		model.addAttribute("plate", product);
 		
-		request.getRequestDispatcher("/WEB-INF/jsp/user_index.jsp").forward(request, response);
+		Product result = adminService.findPlateByName(product.getProductName());
+		if(result != null) {
+			model.addAttribute("error", "不能添加相同的产品");
+			return "admin_goodsmgr";
+		}
+		adminService.addNewProduct(product);
+		model.addAttribute("error", "添加成功");
+		return "admin_goodsmgr";
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
+	
 }

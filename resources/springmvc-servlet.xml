@@ -10,9 +10,9 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd">  
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <mvc:resources location="/statics/" mapping="/statics/**" />
+    <mvc:resources location="/statices/" mapping="/statices/**" />
     <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
     	<property name="converters">
     		<list>
@@ -54,6 +54,30 @@
    		 <property name="maxUploadSize" value="1048576"/>
    		 <property name="defaultEncoding" value="UTF-8"/>
     </bean>
+    <!-- 拦截器 -->
+  <!--   <mvc:interceptors> -->
+    	<!-- 限制不登录管理员账户就直接访问管理员功能 -->
+    	<!-- <mvc:interceptor>
+			<mvc:mapping path="/server/**"/>
+    		<bean class="com.interceptor.ServerInterceptor" />
+    	</mvc:interceptor> -->
+    	<!-- 为客户端获取所有板块和分类的数据列表 -->
+    	<!-- <mvc:interceptor>
+    		<mvc:mapping path="/"/>
+    		<mvc:mapping path="/client_view_invitation/*"/>
+    		<mvc:mapping path="/client/**"/>
+    		<mvc:mapping path="/hot_invitations/"/>
+    		<mvc:mapping path="/hot_invitations"/>
+    		<mvc:mapping path="/cream"/>
+    		<mvc:mapping path="/cream/"/>
+    		<bean class="com.interceptor.ClientLeftInterceptor"/>
+    	</mvc:interceptor> -->
+    	<!-- 用户登录后才能使用前端用户功能 -->
+    	<!-- <mvc:interceptor>
+    		<mvc:mapping path="/client/**"/>
+    		<bean class="com.bbs.interceptor.ClientInterceptor"/>
+    	</mvc:interceptor> -->
+  <!--   </mvc:interceptors> -->
 </beans>
 
 

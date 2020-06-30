@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -46,16 +47,16 @@
 			<div class="section-right">
 				<h2>添加商品信息</h2>
 				<form action="${pageContext.request.contextPath}/" method="post" enctype="multipart/form-data">
-					<p>名字：<input type="text" name="goodsName"  /></p>
-					<p>描述：<textarea name="goodsDesc" style="width:300px;height: 200px;vertical-align: top;" required="required"></textarea></p> 
+					<p>名字：<input type="text" name="productName"  /></p>
+					<p>描述：<textarea name="intor" style="width:300px;height: 200px;vertical-align: top;" required="required"></textarea></p> 
 					<p>分类：
-						<select name="cid">
-
+						<select name="categoryId">
+							
 						</select>
 					</p>
 					<p>售价：<input type="number" name="price" step="0.001"  /></p>
 					
-					<p>图片：<input type="file" name="goodsphoto" required="required"  /></p>    				 				
+					<p>图片：<input type="file" name="photo" required="required"  /></p>    				 				
 					<p><input type="submit" value=" 保 存 "  /></p>
 				</form>
 			</div>			
