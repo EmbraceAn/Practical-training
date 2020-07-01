@@ -1,12 +1,16 @@
 
 package com.controller;
 
+
+import java.util.List;
+
 import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -16,12 +20,19 @@ import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
+<<<<<<< HEAD
 import com.alibaba.fastjson.JSON;
 import com.pojo.Category;
+=======
+
+import com.pojo.Category;
+import com.alibaba.fastjson.JSON;
+>>>>>>> branch 'master' of https://github.com/EmbraceAn/Practical-training.git
 import com.pojo.Product;
 import com.service.AdminService;
 
@@ -82,12 +93,46 @@ public class AdminController {
 		model.addAttribute("error", "添加成功");
 		return "redirect:/admin/admin_goodsmgr";
 	}
+
+	// 跳转到分类列表页面
+			@RequestMapping(value="/admin_category_mgr",method=RequestMethod.GET)
+			public String manageCategory(Model model ) {
+				List<Category> categories = adminService.findAllCategories();
+				model.addAttribute("categories", categories);
+				return "admin_category_mgr";
+			}
+		// 实现添加分类功能
+			@RequestMapping(value="/manage_add_category",method=RequestMethod.POST)
+			public String manageAddCategory(String catName,
+					Model model) {
+				Category result = adminService.findCategory(catName);
+				if(result != null) {
+					model.addAttribute("error","不能添加相同的分类名称");
+					return "redirect:/admin/admin_category_mgr";
+				}
+				adminService.addNewCategory(catName);
+				model.addAttribute("category", catName);
+				return "redirect:/admin/admin_category_mgr";
+			}
+			//实现删除分类功能
+			@RequestMapping(value="/delete_category/{catId}",method=RequestMethod.GET)
+			public String deleteCategory(@PathVariable Integer catId,
+					Model model) {
+				adminService.deleteCategory(catId);
+				return "admin_category_mgr";
+						/*"redirect:/admin/admin_category_mgr"*/
+			}
+/*
 	@RequestMapping(value="/admin_category_mgr",method=RequestMethod.GET)
 	public String manageAddCategory() {
 		return "admin_category_mgr";
+<<<<<<< HEAD
 	}
 	
 
+=======
+	}*/
+>>>>>>> branch 'master' of https://github.com/EmbraceAn/Practical-training.git
 //	// 实现添加分类功能
 //				@RequestMapping(value="/manage_add_category",method=RequestMethod.POST)
 //				public String manageAddCategory(String catName,BindingResult bindingResult,
@@ -107,6 +152,7 @@ public class AdminController {
 //					adminService.deleteCategory(catId);
 //					return "redirect:/admin/admin_category_mgr";
 //				}
+
 	
 }
 

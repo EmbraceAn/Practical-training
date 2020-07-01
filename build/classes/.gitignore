@@ -1,1 +1,10 @@
 /com/
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+/database.properties
+/mybatis-config.xml
+/springmvc-servlet.xml
+>>>>>>> branch 'master' of https://github.com/EmbraceAn/Practical-training.git
+>>>>>>> branch 'master' of https://github.com/EmbraceAn/Practical-training.git

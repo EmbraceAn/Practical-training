@@ -26,6 +26,28 @@ public class AdminServiceimpl implements AdminService {
 	public int addNewProduct(String productName, String intro, Double price, String photo, Integer categoryId) {
 		return productMapper.addNewProduct(productName, intro, price, photo, categoryId);
 	}
+	@Override
+	public List<Category> findAllCategories() {
+		// TODO Auto-generated method stub
+		return categoryMapper.findAllCategories();
+	}
+	@Override
+	public Category findCategory(String catName) {
+		// TODO Auto-generated method stub
+		return categoryMapper.findCategory(catName);
+	}
+	@Override
+	public int addNewCategory(String catName) {
+		// TODO Auto-generated method stub
+		return categoryMapper.addNewCategory(catName);
+	}
+	@Override
+	public int deleteCategory(Integer catId) {
+		return categoryMapper.deleteCategory(catId);
+		
+	}
+
+
 
 	@Override
 	public List<Product> findAllPrduct() {
