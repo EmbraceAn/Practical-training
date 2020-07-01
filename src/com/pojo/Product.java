@@ -6,7 +6,7 @@ public class Product {
 		private String intor;
 		private Double price;
 		private String photo;
-		private Category categoryId;
+		private Category category;
 		public Integer getProductId() {
 			return productId;
 		}
@@ -37,12 +37,13 @@ public class Product {
 		public void setPhoto(String photo) {
 			this.photo = photo;
 		}
-		public Category getCategoryId() {
-			return categoryId;
+		public Category getCategory() {
+			return category;
 		}
-		public void setCategoryId(Category categoryId) {
-			this.categoryId = categoryId;
+		public void setCategory(Category category) {
+			this.category = category;
 		}
+	
 		
 		
 }

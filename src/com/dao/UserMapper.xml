@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserMapper">
+	<!-- 根据电话号码和密码查找对应账户信息 -->
+	<select id="findUserByIdAndPsw" resultType="User">
+		select * from user where userPsw=#{userPsw} and userPhone=#{userPhone}
+		
+	</select>
+</mapper>

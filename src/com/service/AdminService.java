@@ -1,7 +1,10 @@
 package com.service;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
+import com.pojo.Category;
 import com.pojo.Product;
 
 public interface AdminService {
@@ -9,4 +12,8 @@ public interface AdminService {
 	Product findPlateByName(String ProductName );
 	int addNewProduct(@Param("productName") String productName,
 			@Param("intro") String intro,@Param("price") Double price,@Param("photo") String photo,@Param("categoryId") Integer categoryId);
+	
+	List<Product> findAllPrduct();
+	
+	List<Category> findAllCategory();
 }

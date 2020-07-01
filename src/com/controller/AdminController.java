@@ -4,6 +4,7 @@ package com.controller;
 import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSON;
+import com.pojo.Category;
 import com.pojo.Product;
 import com.service.AdminService;
 
@@ -30,29 +32,28 @@ public class AdminController {
 	private AdminService adminService;
 	
 	@RequestMapping(value="/admin_goodsmgr",method=RequestMethod.GET)
-	public String manageAddPlate() {
+	public String manageAddPlate(Model model) {
+		List<Product> products= adminService.findAllPrduct();
+		List<Category> categorys= adminService.findAllCategory();
+		model.addAttribute("products", products);
+		model.addAttribute("categorys", categorys);
 		return "admin_goodsmgr";
 	}
 	@RequestMapping(value="/admin_goodsmgr",method=RequestMethod.POST)
 	public String manageAddPlate(String productName,String intro,Double price,MultipartFile pt , Integer categoryId,
 			Model model,HttpServletRequest request) {
-		
 		Product result = adminService.findPlateByName(productName);
 		if(result != null) {
 			model.addAttribute("error", "不能添加相同的产品");
 			return "admin_goodsmgr";
 		}
-		System.out.println(productName);
-		System.out.println(intro);
-		System.out.println(price);
-		System.out.println(pt);
-		System.out.println(categoryId);
+		
 		String fileName = null;
 		Map<String,String> status = new HashMap<String, String>();
 		//判断文件是否为空
 		if(!pt.isEmpty()){
 			String path = request.getSession().getServletContext()
-					.getRealPath("statics"+File.separator+"file");//文件上传路径
+					.getRealPath("statices"+File.separator+"file");//文件上传路径
 			String oldFileName = pt.getOriginalFilename();//原文件名
 			String prefix=FilenameUtils.getExtension(oldFileName);//原文件后缀 
 			int filesize = 1048576;//1M
@@ -85,6 +86,8 @@ public class AdminController {
 	public String manageAddCategory() {
 		return "admin_category_mgr";
 	}
+	
+
 //	// 实现添加分类功能
 //				@RequestMapping(value="/manage_add_category",method=RequestMethod.POST)
 //				public String manageAddCategory(String catName,BindingResult bindingResult,
@@ -106,3 +109,4 @@ public class AdminController {
 //				}
 	
 }
+

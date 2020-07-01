@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <header class="header-area header-style-3">
 	<div class="header-top">
 		<div class="container-fluid">
@@ -49,6 +48,7 @@
 								</ul>
 							</li>
 							<li><a href="contact.html">Contact</a></li>
+							<li><a href="login.html">登录/ 注册</a></li>
 						</ul>
 					</nav>
 				</div>
