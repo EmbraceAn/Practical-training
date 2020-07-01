@@ -4,7 +4,7 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.CategoryMapper">
 	<!-- 根据分类名查找分类是否存在 -->
-	<select id="findCategory" resultType="Category">
+	<select id="findCategory" parameterType="string" resultType="Category">
 		select * from category where catName=#{catName}
 	</select>
 	<!-- 添加新分类（不能填相同名称的分类）-->
@@ -17,7 +17,7 @@
 	</select>
 	<!-- 删除分类 -->
 	<delete id="deleteCategory" parameterType="Integer">
-		delete * from category where catId=#{catId}
+		delete from category where catId=#{catId}
 	</delete>
 </mapper>
 

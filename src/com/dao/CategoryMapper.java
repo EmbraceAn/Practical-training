@@ -8,7 +8,7 @@ public interface CategoryMapper {
 
 	List<Category> findAllCategories();
 
-	int findCategory(String catName);
+	Category findCategory(String catName);
 
 	int addNewCategory(String catName);
 

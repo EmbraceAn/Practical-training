@@ -21,10 +21,11 @@ public class AdminServiceimpl implements AdminService {
 	public Product findPlateByName(String ProductName) {
 		return productMapper.findPlateByName(ProductName);
 	}
+
 	@Override
-	public int addNewProduct(Product product) {
+	public int addNewProduct(String productName, String intro, Double price, String photo, Integer categoryId) {
 		// TODO Auto-generated method stub
-		return productMapper.addNewProduct(product);
+		return productMapper.addNewProduct(productName, intro, price, photo, categoryId);
 	}
 	@Override
 	public List<Category> findAllCategories() {
@@ -32,7 +33,7 @@ public class AdminServiceimpl implements AdminService {
 		return categoryMapper.findAllCategories();
 	}
 	@Override
-	public int findCategory(String catName) {
+	public Category findCategory(String catName) {
 		// TODO Auto-generated method stub
 		return categoryMapper.findCategory(catName);
 	}
@@ -46,5 +47,7 @@ public class AdminServiceimpl implements AdminService {
 		return categoryMapper.deleteCategory(catId);
 		
 	}
+
+
 
 }

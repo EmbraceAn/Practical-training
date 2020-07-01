@@ -30,7 +30,7 @@
 			    </table>
 			</div>
 			<div class="section-right">
-				<h2>添加分类信息</h2> 
+				<h2>添加分类信息</h2>  <p>${param.error}</p>
 				<form action="${pageContext.request.contextPath}/admin/manage_add_category" method="post">
 					<p>分类名称：<input type="text" name="catName"><input type="submit" value=" 保 存 "  /></p>						
 			    </form>
