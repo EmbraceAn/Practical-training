@@ -15,10 +15,11 @@ public class AdminServiceimpl implements AdminService {
 	public Product findPlateByName(String ProductName) {
 		return productMapper.findPlateByName(ProductName);
 	}
+
 	@Override
-	public int addNewProduct(Product product) {
+	public int addNewProduct(String productName, String intro, Double price, String photo, Integer categoryId) {
 		// TODO Auto-generated method stub
-		return productMapper.addNewProduct(product);
+		return productMapper.addNewProduct(productName, intro, price, photo, categoryId);
 	}
 
 }

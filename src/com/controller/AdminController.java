@@ -1,15 +1,25 @@
 
 package com.controller;
 
+import java.io.File;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.alibaba.fastjson.JSON;
 import com.pojo.Product;
 import com.service.AdminService;
 
@@ -24,18 +34,52 @@ public class AdminController {
 		return "admin_goodsmgr";
 	}
 	@RequestMapping(value="/admin_goodsmgr",method=RequestMethod.POST)
-	public String manageAddPlate(@Valid Product product,BindingResult bindingResult,
-			Model model) {
-		model.addAttribute("plate", product);
+	public String manageAddPlate(String productName,String intro,Double price,MultipartFile pt , Integer categoryId,
+			Model model,HttpServletRequest request) {
 		
-		Product result = adminService.findPlateByName(product.getProductName());
+		Product result = adminService.findPlateByName(productName);
 		if(result != null) {
 			model.addAttribute("error", "不能添加相同的产品");
 			return "admin_goodsmgr";
 		}
-		adminService.addNewProduct(product);
+		System.out.println(productName);
+		System.out.println(intro);
+		System.out.println(price);
+		System.out.println(pt);
+		System.out.println(categoryId);
+		String fileName = null;
+		Map<String,String> status = new HashMap<String, String>();
+		//判断文件是否为空
+		if(!pt.isEmpty()){
+			String path = request.getSession().getServletContext()
+					.getRealPath("statics"+File.separator+"file");//文件上传路径
+			String oldFileName = pt.getOriginalFilename();//原文件名
+			String prefix=FilenameUtils.getExtension(oldFileName);//原文件后缀 
+			int filesize = 1048576;//1M
+	        if(pt.getSize() >  filesize){//上传大小不得超过 1M
+	        	status.put("status","文件不能超过1M");
+	        	return JSON.toJSONString(status);
+            }else if(prefix.equalsIgnoreCase("jpg") || prefix.equalsIgnoreCase("png") 
+            		|| prefix.equalsIgnoreCase("gif")){//上传图片格式不正确
+            	Random random = new Random();
+            	fileName = new Date().getTime()+random.nextInt(100)+"."+prefix;
+                File targetFile = new File(path,fileName);
+                try {  
+                	pt.transferTo(targetFile);  //上传文件
+                } catch (Exception e) {  
+                    e.printStackTrace();
+                }
+            }else{
+            	model.addAttribute("error", "图片格式不对");
+        		return "admin_goodsmgr";
+            }
+		}
+		
+		
+		
+		adminService.addNewProduct(productName, intro, price, fileName, categoryId);
 		model.addAttribute("error", "添加成功");
-		return "admin_goodsmgr";
+		return "redirect:/admin/admin_goodsmgr";
 	}
 	
 }

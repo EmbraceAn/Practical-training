@@ -46,17 +46,21 @@
 <!-- 添加商品信息 -->
 			<div class="section-right">
 				<h2>添加商品信息</h2>
-				<form action="${pageContext.request.contextPath}/" method="post" enctype="multipart/form-data">
-					<p>名字：<input type="text" name="productName"  /></p>
-					<p>描述：<textarea name="intor" style="width:300px;height: 200px;vertical-align: top;" required="required"></textarea></p> 
+				<form action="" method="post" enctype="multipart/form-data">
+				            ${error}
+					<p>名字：<input type="text" name="productName"  enctype="multipart/form-data"/></p>
+					<p>描述：<textarea name="intro" style="width:300px;height: 200px;vertical-align: top;" required="required"></textarea></p> 
 					<p>分类：
+					
+					
+					
 						<select name="categoryId">
-							
+							<option> 1</option> 
 						</select>
 					</p>
 					<p>售价：<input type="number" name="price" step="0.001"  /></p>
 					
-					<p>图片：<input type="file" name="photo" required="required"  /></p>    				 				
+					<p>图片：<input type="file" name="pt" required="required"  id="photo" /></p>    				 				
 					<p><input type="submit" value=" 保 存 "  /></p>
 				</form>
 			</div>			
