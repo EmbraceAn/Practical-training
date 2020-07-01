@@ -81,5 +81,28 @@ public class AdminController {
 		model.addAttribute("error", "添加成功");
 		return "redirect:/admin/admin_goodsmgr";
 	}
+	@RequestMapping(value="/admin_category_mgr",method=RequestMethod.GET)
+	public String manageAddCategory() {
+		return "admin_category_mgr";
+	}
+//	// 实现添加分类功能
+//				@RequestMapping(value="/manage_add_category",method=RequestMethod.POST)
+//				public String manageAddCategory(String catName,BindingResult bindingResult,
+//						Model model) {
+//					if(adminService.findCategory(catName) == 0) {
+//						model.addAttribute("error","不能添加相同的分类名称");
+//						return "manage_add_category";
+//					}
+//					adminService.addNewCategory(catName);
+//					model.addAttribute("category", catName);
+//					return "redirect:/admin/admin_category_mgr";
+//				}
+//				//实现删除分类功能
+//				@RequestMapping(value="/delete_category",method=RequestMethod.POST)
+//				public String deleteCategory(Integer catId,BindingResult bindingResult,
+//						Model model) {
+//					adminService.deleteCategory(catId);
+//					return "redirect:/admin/admin_category_mgr";
+//				}
 	
 }
