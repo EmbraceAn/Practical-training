@@ -473,12 +473,17 @@ $("body").on("click",".addshop",function(event){
 			catId:$(this).attr('catId'),
 	     userId:$("#userId").attr('userId'),},
 		success:function(x){
-			
+			if(x['status'] == '添加成功'){
+				alert(x['status']);
+			}
+			else{
+				alert(x['status']);
+			}
 		},
 		error:function(){		// 请求失败
 			alert("请求错误");
 		},
-		dataType:"text"
+		dataType:"json"
 	});
 });
 </script> 

@@ -124,5 +124,15 @@ public class UserServiceimpl implements UserService {
 		// TODO Auto-generated method stub
 		return categoryMapper.findcatId();
 	}
+	@Override
+	public int updateGoods2(Integer numbers,Integer productId) {
+		// TODO Auto-generated method stub
+		return goodsMapper.updateGoods2(productId, numbers);
+	}
+	@Override
+	public int addGoods2(Integer productId, String userId, Integer numbers, Integer catId) {
+		// TODO Auto-generated method stub
+		return goodsMapper.addGoods2(productId, userId, numbers, catId);
+	}
 
 }

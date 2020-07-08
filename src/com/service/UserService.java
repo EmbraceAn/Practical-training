@@ -33,7 +33,7 @@ int updateGoods(Integer productId);
 List<Goods> findAllGoods(String userId);
 
 int addGoods(@Param("productId") Integer productId,@Param("userId") String userId,@Param("catId") Integer catId);
-
+int addGoods2(@Param("productId") Integer productId,@Param("userId") String userId,@Param("numbers") Integer numbers,@Param("catId") Integer catId);
 Goods findGoodsbyGoods(Integer productId);
 
 	int addNewUser(User user);
@@ -48,7 +48,7 @@ Goods findGoodsbyGoods(Integer productId);
 //上传新博客
 	int addNewBlog(@Param("blogTitle") String blogTitle,@Param("blogMessage") String blogMessage,@Param("userId") String userId,@Param("blogCreateDate") Date blogCreateDate,
 			@Param("blogPhoto") String blogPhoto,@Param("userAlice") String userAlice);
-	
+	int updateGoods2(@Param("numbers") Integer numbers,@Param("productId") Integer productId);
 	
 	int findcatId();
 }

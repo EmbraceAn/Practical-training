@@ -31,11 +31,17 @@
 		insert into goods(productId,price,numbers,userId,catId)
 		values(#{productId},(select price from product where productId=#{productId}),1,#{userId},#{catId});
 	</insert>
-	
+	<insert id="addGoods2">
+		insert into goods(productId,price,numbers,userId,catId)
+		values(#{productId},(select price from product where productId=#{productId}),#{numbers},#{userId},#{catId});
+	</insert>
 		<update id="updateGoods" >
 		 UPDATE goods set numbers=numbers+1 WHERE productId=#{productId}
 	</update>
 	
+		<update id="updateGoods2" >
+		 UPDATE goods set numbers=numbers+#{numbers} WHERE productId=#{productId}
+	</update>
 <select id="findGoodsbyGoods" resultType="Goods">
 		select * from goods  WHERE productId=#{productId}
 	</select>

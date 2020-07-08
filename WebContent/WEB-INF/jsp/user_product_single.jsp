@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-     <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+      <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -175,25 +177,26 @@
 								${Product.intro}
 							</p>
 						</div>
-
+						<form action="" method="post">
 						<div class="product-action-box mt-25 mb-40">
 							<div class="product-quantity">
 								<span class="quantity">
 									<span class="minus"><i class="fas fa-minus"></i></span>
-									<input class="current-value" type="text" value="1">
+									<input class="current-value" type="text" value="1" name="number" id="number">
+									<input type="hidden" value="${Product.productId}" name="productId">
+									<input type="hidden" value="${Product.category.catId}" name="catId">
 									<span class="plus"><i class="fas fa-plus"></i></span>
 								</span>
 							</div>
 							<div class="add-to-cart">
-								<a href="#" class="btn btn-gra">Add To Cart</a>
+								<a href="#" class="btn btn-gra">
+								<input type="submit" value="Add To Cart" ></a>
 							</div>
 						</div>
-						<div class="product-serial">
-							<span>productId:</span>
-							<a href="#">${Product.productId}</a>
-						</div>
+						</form>
+						
 						<div class="product-cat">
-							<span>Category:</span>
+							<span>分类</span>
 							<a href="#">${Product.category.catName}</a>
 						</div>
 					</div>
@@ -247,7 +250,7 @@
 											<img src="${pageContext.request.contextPath}/statices/file/${Np.photo }" alt="product">
 											<div class="product-action">
 												<a href="${pageContext.request.contextPath}/user/user_product_single?productId=${Np.productId }"><i class="far fa-search"></i></a>
-												<a href="#"><i class="far fa-shopping-cart"></i></a>
+												<a href="#"><i class="far fa-shopping-cart addshop" productId="${Np.productId}" catId="${Np.category.catId }"></i></a>
 												<a href="#"><i class="far fa-heart"></i></a>
 											</div>
 										</div>
@@ -412,7 +415,29 @@
 <!-- footer-area end -->
 
 <div id="scrollUp"><i class="far fa-angle-double-up"></i></div>
-
+ <script>
+$("body").on("click",".addshop",function(event){
+	event.preventDefault();	// 阻止事件默认行为
+	$.ajax("${pageContext.request.contextPath}/user/addgoods3",{
+		type:"GET", // 请求方式为POST
+		data:{productId:$(this).attr('productId'),
+			catId:$(this).attr('catId'),
+	     userId:$("#userId").attr('userId'),},
+		success:function(x){
+			if(x['status'] == '添加成功'){
+				alert(x['status']);
+			}
+			else{
+				alert(x['status']);
+			}
+		},
+		error:function(){		// 请求失败
+			alert("请求错误");
+		},
+		dataType:"json"
+	});
+});
+</script> 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="${pageContext.request.contextPath}/statices/assets/js/jquery-3.4.1.min.js"></script>

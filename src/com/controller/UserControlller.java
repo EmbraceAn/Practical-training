@@ -2,10 +2,11 @@ package com.controller;
 
 
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.io.File;
 import java.util.Date;
-
+import java.util.HashMap;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -115,6 +116,30 @@ public class UserControlller {
 		List<Product> Nproduct = userService.findNewProduct();
 		model.addAttribute("Product", Product);
 		model.addAttribute("Nproduct", Nproduct);
+		return "user_product_single";
+	}
+	@RequestMapping(value="/user_product_single",method=RequestMethod.POST)
+	public String viewuserproductsingleById( Integer productId,Model model,Integer catId,HttpSession session,String number) {
+		 User loginer = (User)session.getAttribute("loginer");
+		 if(loginer ==null) {
+			 model.addAttribute("error", "请先登录");
+				return "redirect:/user/user_login";
+		 }
+		 Goods rs =userService.findGoodsbyGoods(productId);
+		 if(rs != null) {
+				userService.updateGoods2(productId,Integer.valueOf(number));
+				List<Product> Product = userService.findAllPrductbyId(productId);
+				List<Product> Nproduct = userService.findNewProduct();
+				model.addAttribute("Product", Product);
+				model.addAttribute("Nproduct", Nproduct);
+				return "user_product_single";
+			}
+		 String  userId=loginer.getUserId();
+		 userService.addGoods2(productId,userId,Integer.valueOf(number),catId);
+		 List<Product> Product = userService.findAllPrductbyId(productId);
+			List<Product> Nproduct = userService.findNewProduct();
+			model.addAttribute("Product", Product);
+			model.addAttribute("Nproduct", Nproduct);
 		return "user_product_single";
 	}
 
@@ -244,18 +269,24 @@ public class UserControlller {
 	@RequestMapping(value="/addgoods3",method=RequestMethod.GET)
 	@ResponseBody
 	public String addgoods(Integer productId ,Integer catId,String userId) {
+		Map<String,String> status = new HashMap<String, String>();
+		
 		 Goods rs =userService.findGoodsbyGoods(productId);
 		
 		userId= userId.trim();
 		 if(!StringUtils.isNullOrEmpty(userId)) {
 			 if(rs != null) {
 					userService.updateGoods(productId);
-					return JSON.toJSONString("加一");
+					status.put("status","添加成功");
+					return JSON.toJSONString(status);
 				}
 			 userService.addGoods(productId,userId,catId);
+			 status.put("status","添加成功");
+				return JSON.toJSONString(status);
 		 }
 			
-		return JSON.toJSONString("创建");
+		 status.put("status","请登录");
+			return JSON.toJSONString(status);
 	}
 	
 	@RequestMapping(value="/addgoods2",method=RequestMethod.GET)	
