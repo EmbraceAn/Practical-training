@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.CategoryMapper">
+
+	<!-- 根据分类名查找分类是否存在 -->
+	<select id="findCategory" parameterType="string" resultType="Category">
+		select * from category where catName=#{catName}
+	</select>
+	<!-- 添加新分类（不能填相同名称的分类）-->
+	<insert id="addNewCategory" parameterType="string">
+		insert into category(catName) values(#{catName})
+	</insert>
+	<!-- 查找所有分类 -->
+	<select id="findAllCategories" resultType="Category">
+		select * from category
+	</select>
+	<!-- 删除分类 -->
+	<delete id="deleteCategory" parameterType="Integer">
+		delete from category where catId=#{catId}
+	</delete>
+
+
+	
+<select id="findAllCategory" resultType="Category">
+		select * from category 
+	</select>
+
+<select id="findcatId" resultType="int">
+SELECT catId FROM category LIMIT 1
+	</select>
+</mapper>
+
+
+

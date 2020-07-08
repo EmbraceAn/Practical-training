@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ProductMapper">
+	<resultMap type="Product" id="productMap">
+		<id property="productId" column="productId" />
+		<association property="category" javaType="Category">
+			<id property="catId" column="catId" />
+		</association>
+	</resultMap>
+	<select id="findPlateByName" resultType="Product">
+		select * from product
+		where ProductName=#{ProductName}
+	</select>
+
+	<insert id="addNewProduct">
+		insert into
+		product(productName,intro,price,photo,category_id)
+		values(#{productName},#{intro},#{price},#{photo},#{categoryId})
+</insert>
+	
+	 <select id="findProductNameByid" resultType="String">
+		select ProductName from product where productId=#{productId}
+	</select>
+	
+
+
+
+	<select id="findAllPrduct" resultMap="productMap">
+		select
+		product.productId,product.productName,
+		product.intro,product.price,product.photo,product.category_id,category.catName
+		from product left join category on product.category_id=category.catId
+	</select>
+
+	<delete id="delPorductByProductid" parameterType="int">
+		delete from
+		product
+		where productId=#{productId}
+	</delete>
+
+	<update id="updateProductbyProductid">
+		UPDATE product
+		<trim prefix="set" suffixOverrides=",">
+			<if test="productName!=null">productName=#{productName},</if>
+			<if test="intro!=null">intro=#{intro},</if>
+			<if test="price!=null">price=#{price},</if>
+			<if test="photo!=null">photo=#{photo},</if>
+			<if test="categoryId!=null">category_id=#{categoryId},</if>
+		</trim>
+		WHERE productId=#{productId}
+	</update>
+
+
+	<select id="findAllPrductbyId" resultMap="productMap">
+		select
+		product.productId,product.productName,
+		product.intro,product.price,product.photo,product.category_id,category.catName,category.catid
+		from product left join category on product.category_id=category.catId
+		WHERE productId=#{productId}
+
+	</select>
+
+
+	<!-- 查找最近的4种商品 -->
+	<select id="findNewProduct" resultMap="productMap">
+		select * from product
+		limit 0,4
+	</select>
+
+
+
+
+	<select id="findAllPrductbyCategoryId" resultMap="productMap" parameterType="int">
+		select * from product left join	category on product.category_id=category.catId  
+		 where  
+	 <choose>
+    <when test="categoryId != null">
+     category_id=#{categoryId}
+    </when>
+    <otherwise>
+     category_id = (SELECT catId FROM category LIMIT 1)
+    </otherwise>
+  </choose>
+	</select>
+
+	<!-- 查询商品信息 -->
+	<select id="findAllProductByName" resultMap="productMap">
+		select product.*,category.catId,catName from product left join category 
+		on product.category_id=category.catId
+		<where>
+			<if test='catName !=null and catName !="所有"'>
+				and catName=#{catName}
+			</if>
+			<if test='productName !=null and productName !="无"'>
+				and productName like CONCAT('%',#{productName},'%')
+			</if>
+		</where>
+	</select>
+
+	
+	<select id="pageProduct" resultMap="productMap">
+	select product.*,category.catId,catName from product left join	category on product.category_id=category.catId  where 
+	<choose>
+    <when test="categoryId != null">
+     category_id=#{categoryId}
+    </when>
+    <otherwise>
+     category_id = (SELECT catId FROM category LIMIT 1)
+    </otherwise>
+  </choose>
+  limit #{numbers},#{currentPage}
+	</select>
+	
+	
+	<select id="ProductLength" resultType="int">
+		select count(productId) from product where category_id=#{categoryId} 
+	</select>
+</mapper>
+
+
+

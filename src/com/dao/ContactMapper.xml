@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ContactMapper">
+	<!-- 添加留言 -->
+	<insert id="addcontact">
+		insert into Message(userId,content,email,messageCreateDate) values(#{userId},#{content},#{email},#{messageCreateDate})
+	</insert>
+	<!-- 查找所有的留言 -->
+	<select id="findAllMessages" resultType="Message">
+		select * from Message
+	</select>
+	<!-- 删除留言 -->
+	<delete id="deleteContact" parameterType="Integer">
+		delete from Message where messageId=#{messageId}
+	</delete>
+	<!-- 审核，修改isEnable -->
+	<update id="isPassContact" parameterType="Integer">
+	update Message set isPass = 1 where messageId=#{messageId} 
+	</update>
+	<!-- 查找所有已经通过审核的留言 -->
+	<select id="findPassedMessage" resultType="Message">
+		select * from Message where isPass=1
+	</select>
+</mapper>
+
+
+

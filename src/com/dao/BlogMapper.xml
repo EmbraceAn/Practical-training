@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.BlogMapper">
+<!-- 查找所有通过审核的blog -->
+	<select id="findPassedBlogs" resultType="Blog">
+		select * from blog where isPass =1 
+	</select>
+<!-- 查找所有的blog -->
+	<select id="findAllBlogs" resultType="Blog">
+		select * from blog 
+	</select>
+	<!-- 根据id删除blog -->
+	<delete id="deleteblogById" parameterType="Integer">
+	delete from blog where blogId=#{blogId}
+	</delete>
+	<!-- 修改isPass为1 -->
+	<update id="isPassblogById"  parameterType="Integer">
+	update blog set isPass = 1 where blogId=#{blogId} 
+	</update>
+		<!-- 查找对应Id的blog -->
+	<select id="findblogById" parameterType="Integer" resultType="Blog">
+	select * from blog where blogId=#{blogId}
+	</select>	
+	<!-- 上传博客内容 -->
+	<insert id="addNewBlog">
+		insert into blog(blogTitle,blogMessage,blogPhoto,blogCreateDate,userAlice,userId)
+			values(#{blogTitle},#{blogMessage},#{blogPhoto},#{blogCreateDate},#{userAlice},#{userId})
+	</insert>
+</mapper>
