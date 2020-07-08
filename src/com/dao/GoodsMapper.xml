@@ -23,6 +23,7 @@
 		left join product on goods.productId=product.productId
 		left join user on goods.userId=user.userId
 		left join category on goods.catId=category.catId
+		where goods.userId =#{userId}
 		
 	</select>
 	

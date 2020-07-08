@@ -1,8 +1,18 @@
+<%@page import="com.pojo.User"%>
 <%@ page language="java" pageEncoding="utf-8"%>
 
 <script src="${pageContext.request.contextPath}/statices/assets/js/jquery.min.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!-- header-area start -->
+
+<%
+if(session.getAttribute("loginer")!=null){
+User login =(User)session.getAttribute("loginer");
+%>
+<div id="userId" style="display: none;" userId ="<%=login.getUserId() %>"> </div>
+<% }else{%>
+<div id="userId" style="display: none;" userId =" "> </div>
+<%} %>
 <header class="header-area header-style-3">
 	<div class="header-top">
 		<div class="container-fluid">
@@ -182,6 +192,7 @@ function goods(){
 	$.ajax({
 		url:'${pageContext.request.contextPath}/user/addgoods2',
 		type:'get',
+		data:{userId:$("#userId").attr('userId'),},
 		dataType:'json',
 		success:function(x){
 			var div = $(".offset-widget");

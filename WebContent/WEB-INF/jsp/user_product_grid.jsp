@@ -256,7 +256,7 @@
 						
 
 						</div>
-						<div id="userId" style="display: none;" userId ="${userId }"> </div>
+						
 						<div id="categoryId" style="display: none;" categoryId =${categoryId }> </div>
 							<div class="row mt-70">
 							<div class="col-xl-12">
@@ -468,7 +468,7 @@ $("body").on("click",".pagechange",function(event){
 $("body").on("click",".addshop",function(event){
 	event.preventDefault();	// 阻止事件默认行为
 	$.ajax("${pageContext.request.contextPath}/user/addgoods3",{
-		type:"POST", // 请求方式为POST
+		type:"GET", // 请求方式为POST
 		data:{productId:$(this).attr('productId'),
 			catId:$(this).attr('catId'),
 	     userId:$("#userId").attr('userId'),},
@@ -478,16 +478,16 @@ $("body").on("click",".addshop",function(event){
 		error:function(){		// 请求失败
 			alert("请求错误");
 		},
-		dataType:"String"
+		dataType:"text"
 	});
 });
 </script> 
-
+<!-- 
 <script>
-$(".addshop").click(function(event){
+$(".product-grids .product-action a .addshop").click(function(event){
 		event.preventDefault();	// 阻止事件默认行为
 		$.ajax("${pageContext.request.contextPath}/user/addgoods3",{
-			type:"POST", // 请求方式为POST
+			type:"get", // 请求方式为POST
 			data:{productId:$(this).attr('productId'),
 				catId:$(this).attr('catId'),
 			     userId:$("#userId").attr('userId'),},
@@ -495,9 +495,9 @@ $(".addshop").click(function(event){
 			error:function(){		// 请求失败
 				alert("请求错误");
 			},
-			dataType:"json"
+			dataType:"String"
 		});
 	});
-</script> 
+</script>  -->
 </body>
 </html>

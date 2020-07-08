@@ -11,7 +11,7 @@ public interface GoodsMapper {
 int addGoods(@Param("productId") Integer productId,@Param("userId") String userId,@Param("catId") Integer catId);
 
 Goods findGoodsbyGoods(Integer productId);
-List<Goods> findAllGoods();
+List<Goods> findAllGoods(String userId);
 int updateGoods(Integer productId);
 
 }

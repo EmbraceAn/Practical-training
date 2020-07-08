@@ -30,7 +30,7 @@ public interface UserService {
 	
 
 int updateGoods(Integer productId);
-List<Goods> findAllGoods();
+List<Goods> findAllGoods(String userId);
 
 int addGoods(@Param("productId") Integer productId,@Param("userId") String userId,@Param("catId") Integer catId);
 

@@ -81,8 +81,8 @@ public class UserServiceimpl implements UserService {
 	}
 
 	@Override
-	public List<Goods> findAllGoods() {
-		return goodsMapper.findAllGoods();
+	public List<Goods> findAllGoods(String userId) {
+		return goodsMapper.findAllGoods(userId);
 	}
 	@Override
 	public int addGoods(Integer productId, String userId,Integer catId) {

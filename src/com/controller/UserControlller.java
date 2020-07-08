@@ -241,25 +241,36 @@ public class UserControlller {
 		return "redirect:/user/user_product_grid";
 	}
 	
-	@RequestMapping(value="/addgoods3",method=RequestMethod.POST)
+	@RequestMapping(value="/addgoods3",method=RequestMethod.GET)
+	@ResponseBody
 	public String addgoods(Integer productId ,Integer catId,String userId) {
 		 Goods rs =userService.findGoodsbyGoods(productId);
-		 if(rs != null) {
-				userService.updateGoods(productId);
-				return "加一";
-			}
-		 userService.addGoods(productId,userId,catId);
-		return " 创建";
+		
+		userId= userId.trim();
+		 if(!StringUtils.isNullOrEmpty(userId)) {
+			 if(rs != null) {
+					userService.updateGoods(productId);
+					return JSON.toJSONString("加一");
+				}
+			 userService.addGoods(productId,userId,catId);
+		 }
+			
+		return JSON.toJSONString("创建");
 	}
 	
 	@RequestMapping(value="/addgoods2",method=RequestMethod.GET)	
 	@ResponseBody
-	public Object nameProving4(){
-		List<Goods> goodss=userService.findAllGoods();
-			if(goodss==null){
-				return null;
-			}
-			return JSON.toJSONString(goodss);
+	public String nameProving4(String userId){
+		userId= userId.trim();
+		 if(!StringUtils.isNullOrEmpty(userId)) {
+			 System.out.println(userId);
+			 List<Goods> goodss=userService.findAllGoods(userId);
+			 return JSON.toJSONString(goodss);
+				}
+		
+		 Goods goods =new Goods();
+	 return JSON.toJSONString(goods);
+			
 
 	}
 	//访问blog页面
