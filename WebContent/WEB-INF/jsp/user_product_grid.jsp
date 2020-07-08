@@ -1,3 +1,4 @@
+<%@page import="com.pojo.User"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
      <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -241,7 +242,7 @@
 										<img src="${pageContext.request.contextPath}/statices/file/${pro.photo}" alt="product">
 										<div class="product-action">
 											<a href="${pageContext.request.contextPath}/user/user_product_single?productId=${pro.productId}"><i class="far fa-search"></i></a>
-											<a href="${pageContext.request.contextPath}/user/addgoods?productId=${pro.productId }&catId=${pro.category.catId }"><i class="far fa-shopping-cart"></i></a>
+												<a href="#"><i class="far fa-shopping-cart addshop" productId="${pro.productId}" catId="${pro.category.catId }"></i></a>
 											<a href="#"><i class="far fa-heart"></i></a>
 										</div>
 									</div>
@@ -255,6 +256,7 @@
 						
 
 						</div>
+						<div id="userId" style="display: none;" userId ="${userId }"> </div>
 						<div id="categoryId" style="display: none;" categoryId =${categoryId }> </div>
 							<div class="row mt-70">
 							<div class="col-xl-12">
@@ -359,12 +361,12 @@ $(".col-xl-12 [href='#']").click(function(event){
 						+'<img src="${pageContext.request.contextPath}/statices/file/'+list[i].photo+'" alt="product">'
 						+'<div class="product-action">'
 						+'<a href="#"><i class="far fa-search"></i></a>'
-						+'<a href="${pageContext.request.contextPath}/user/addgoods?productId='+list[i].productId+'&catId='+list[i].category.catId+'"><i class="far fa-shopping-cart addshop" ></i></a>'
+						+'<a href="#"><i class="far fa-shopping-cart addshop" productId="'+list[i].productId+'" catId="'+list[i].category.catId+'" ></i></a>'
 						+'<a href="#"><i class="far fa-heart"></i></a>'
 						+'</div>'
 						+'</div>'
 						+'<div class="product-content">'
-						+'<h4><a href="product-single.html">'+list[i].product.productName+'</a></h4>'
+						+'<h4><a href="product-single.html">'+list[i].productName+'</a></h4>'
 						+'<span class="price">'+list[i].price+'</span>'
 						+'</div>'
 						+'</div>'
@@ -422,12 +424,12 @@ $("body").on("click",".pagechange",function(event){
 					+'<img src="${pageContext.request.contextPath}/statices/file/'+list[i].photo+'" alt="product">'
 					+'<div class="product-action">'
 					+'<a href="#"><i class="far fa-search"></i></a>'
-					+'<a href="${pageContext.request.contextPath}/user/addgoods?productId='+list[i].productId+'&catId='+list[i].category.catId+'"><i class="far fa-shopping-cart" addshop></i></a>'
+					+'<a href="#" ><i class="far fa-shopping-cart addshop" productId="'+list[i].productId+'" catId="'+list[i].category.catId+'"></i></a>'
 					+'<a href="#"><i class="far fa-heart"></i></a>'
 					+'</div>'
 					+'</div>'
 					+'<div class="product-content">'
-					+'<h4><a href="product-single.html">'+list[i].product.productName+'</a></h4>'
+					+'<h4><a href="product-single.html">'+list[i].productName+'</a></h4>'
 					+'<span class="price">'+list[i].price+'</span>'
 					+'</div>'
 					+'</div>'
@@ -462,21 +464,40 @@ $("body").on("click",".pagechange",function(event){
 </script>
 
 
-<!--  <script>
+ <script>
 $("body").on("click",".addshop",function(event){
 	event.preventDefault();	// 阻止事件默认行为
-	$.ajax("${pageContext.request.contextPath}/user/addgoods",{
+	$.ajax("${pageContext.request.contextPath}/user/addgoods3",{
 		type:"POST", // 请求方式为POST
-		data:{page:$(this).attr('page'),
-	     	categoryId:$("#categoryId").attr('categoryId'),},
-		
-		success:function(){},
+		data:{productId:$(this).attr('productId'),
+			catId:$(this).attr('catId'),
+	     userId:$("#userId").attr('userId'),},
+		success:function(x){
+			
+		},
 		error:function(){		// 请求失败
 			alert("请求错误");
 		},
-		dataType:"json"
+		dataType:"String"
 	});
 });
-</script>  -->
+</script> 
+
+<script>
+$(".addshop").click(function(event){
+		event.preventDefault();	// 阻止事件默认行为
+		$.ajax("${pageContext.request.contextPath}/user/addgoods3",{
+			type:"POST", // 请求方式为POST
+			data:{productId:$(this).attr('productId'),
+				catId:$(this).attr('catId'),
+			     userId:$("#userId").attr('userId'),},
+			success:function(x){},
+			error:function(){		// 请求失败
+				alert("请求错误");
+			},
+			dataType:"json"
+		});
+	});
+</script> 
 </body>
 </html>

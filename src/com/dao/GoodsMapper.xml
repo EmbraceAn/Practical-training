@@ -28,7 +28,7 @@
 	
 	<insert id="addGoods">
 		insert into goods(productId,price,numbers,userId,catId)
-		values(#{productId},(select price from product where productId=${productId}),1,#{userId},#{catId});
+		values(#{productId},(select price from product where productId=#{productId}),1,#{userId},#{catId});
 	</insert>
 	
 		<update id="updateGoods" >

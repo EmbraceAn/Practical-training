@@ -121,7 +121,7 @@ public class UserControlller {
 
 	//商品分类展示
 	@RequestMapping(value="/user_product_grid",method=RequestMethod.GET)
-	public String userproductgrid(Model model,Integer categoryId,String page) {
+	public String userproductgrid(Model model,Integer categoryId,String page,HttpSession session) {
 		Integer numbers=6;
 		if(StringUtils.isNullOrEmpty(page) || Integer.valueOf(page)<1) {
 			page = "1";
@@ -138,6 +138,16 @@ public class UserControlller {
 			page="1";
 		}
 		}
+		
+		 User loginer = (User)session.getAttribute("loginer");
+		 if(loginer!=null) {
+				String userId=loginer.getUserId();
+				model.addAttribute("userId",userId);
+			 
+		 }else {
+			 model.addAttribute("userId"," ");
+			 
+		 }
 		// 获取第一页显示的所有数据
 		List<Product> galleries = pageService.pageProduct(numbers, Integer.valueOf(page),categoryId);
 		// 获取分页字符串
@@ -229,6 +239,17 @@ public class UserControlller {
 		 String  userId=loginer.getUserId();
 		 userService.addGoods(productId,userId,catId);
 		return "redirect:/user/user_product_grid";
+	}
+	
+	@RequestMapping(value="/addgoods3",method=RequestMethod.POST)
+	public String addgoods(Integer productId ,Integer catId,String userId) {
+		 Goods rs =userService.findGoodsbyGoods(productId);
+		 if(rs != null) {
+				userService.updateGoods(productId);
+				return "加一";
+			}
+		 userService.addGoods(productId,userId,catId);
+		return " 创建";
 	}
 	
 	@RequestMapping(value="/addgoods2",method=RequestMethod.GET)	
