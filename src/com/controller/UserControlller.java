@@ -54,6 +54,8 @@ public class UserControlller {
 	public String Index(String productName,String catName, Model model,HttpSession session) {
 		List<Category> categories=adminService.findAllCategories();
 		List<Product> products =userService.findAllProductByName(productName, catName);
+		List<Blog> Blog = adminService.findPassedBlogs();
+		model.addAttribute("Blog", Blog);
 		model.addAttribute("products", products);
 		model.addAttribute("categories", categories);
 		//设置搜索的产品名称
@@ -66,6 +68,8 @@ public class UserControlller {
 	@RequestMapping(value="/user_contact",method=RequestMethod.GET)
 	public String viewcontact(Model model) {
 		List<Message> Message = userService.findPassedMessage();
+		List<Blog> Blog = adminService.findPassedBlogs();
+		model.addAttribute("Blog", Blog);
 		model.addAttribute("Message", Message);
 		return "user_contact";
 	}
@@ -307,14 +311,18 @@ public class UserControlller {
 	//访问blog页面
 	@RequestMapping(value="/user_blog",method=RequestMethod.GET)
 	public String viewblog(Model model) {
+		List<Category> categories=adminService.findAllCategories();
 		List<Blog> Blog = adminService.findPassedBlogs();
 		model.addAttribute("Blog", Blog);
+		model.addAttribute("categories", categories);
 		return "user_blog";
 	}
 	//根据Id访问对应Blog的详情页面
 	@RequestMapping(value="/user_blog_details/{blogId}",method=RequestMethod.GET)
 	public String viewblogdetails(@PathVariable Integer blogId,Model model) {
+		List<Category> categories=adminService.findAllCategories();
 		List<Blog> Blog = adminService.findblogById(blogId);
+		model.addAttribute("categories", categories);
 		model.addAttribute("Blog", Blog);
 		return "user_blog_details";
 	}
@@ -383,8 +391,9 @@ public class UserControlller {
 	
 		//访问写博客页面
 		@RequestMapping(value = "/user_blog_message",method = RequestMethod.GET)
-		public String viewwriteblog() {
-			
+		public String viewwriteblog(Model model) {
+			List<Blog> Blog = adminService.findPassedBlogs();
+			model.addAttribute("Blog", Blog);
 			return "user_blog_massage";
 		}
 		//上传博客功能
@@ -439,7 +448,9 @@ public class UserControlller {
 	}
 //访问关于我们页面
 	@RequestMapping(value = "/user_about",method = RequestMethod.GET)
-	public String viewuserabout() {
+	public String viewuserabout(Model model) {
+		List<Blog> Blog = adminService.findPassedBlogs();
+		model.addAttribute("Blog", Blog);
 		return "user_about";
 	}
 

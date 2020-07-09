@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href=" ${pageContext.request.contextPath}/statices/assets/css/spacing.css">
 	<link rel="stylesheet" href=" ${pageContext.request.contextPath}/statices/assets/css/main.css">
 
-	<title>Glee - Multipurpose WooCommerce HTML Template</title>
+	<title>苏慕家居</title>
 </head>
 
 <body class="home-page-3">
@@ -36,52 +36,6 @@
 
 <!-- header-area start -->
 <%@ include file="common1/header.jsp" %>
-<!-- header-area end -->
-
-
-
-	<!-- side-mobile-menu start -->
-	<nav class="side-mobile-menu">
-		<ul id="mobile-menu-active">
-			<li class="has-dropdown">
-				<a href="index.html">Home</a>
-				<ul class="sub-menu">
-					<li><a href="index.html">Home 1</a></li>
-					<li><a href="index-2.html">Home 2</a></li>
-					<li><a href="index-3.html">Home 3</a></li>
-					<li><a href="index-4.html">Home 4</a></li>
-				</ul>
-			</li>
-			<li><a href="about.html">About</a></li>
-			<li class="has-dropdown">
-				<a href="product-grid.html">Shop</a>
-				<ul class="sub-menu">
-					<li><a href="product-grid.html">Shop Grid</a></li>
-					<li><a href="product-list.html">Shop List</a></li>
-					<li><a href="product-single.html">Shop Details</a></li>
-					<li><a href="wish-list.html">Wish List</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="#">Pages</a>
-				<ul class="sub-menu">
-					<li><a href="faq.html">Faq</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="terms.html">Terms</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="blog.html">Blog</a>
-				<ul class="sub-menu">
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="blog-details.html">Blog Details</a></li>
-				</ul>
-			</li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-	</nav>
-	<!-- side-mobile-menu end -->
-</aside>
 <div class="body-overlay"></div>
 <!-- slide-bar end -->
 
@@ -116,10 +70,10 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
 					<div class="breadcrumb-content">
-						<h3 class="title">About Us</h3>
+						<h3 class="title">关于我们</h3>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li class="active">About Us</li>
+							<li><a href="${pageContext.request.contextPath}/user/user_index">家</a></li>
+							<li class="active">关于我们</li>
 						</ul>
 					</div>
 				</div>
@@ -141,14 +95,17 @@
 					<div class="about-content">
 						<div class="about-info">
 							<span class="num">12</span>
-							<span class="text">Years <br> Experience <br> Working</span>
+							<span class="text">年工作经验</span>
 						</div>
-						<h4 class="mb-30">Mission of our creative house</h4>
+						<h4 class="mb-30">我们创意之家的使命</h4>
 						<p>
-							consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum
+							<h6>①平价的奢华主义</h6>
+								<p style="text-indent:2em;">苏幕家居品牌产品延续了中世纪皇室贵族家具的特点，对每个细节精益求精，在庄严气派中追求奢华优雅，同时根据产品特点还巧妙地融入了现代设计手法，
+								使得产品更贴近于实用性，透露出传统的历史痕迹与深厚的文化底蕴。苏幕家居坚信奢华并不一定昂贵，一直致力于控制生产制作的各个环节成本。苏幕家居依托于家具网的平台，以最大规模统一采购、
+								生产线批量生产、以及全国在线销售等等方式得以实现。</p><br>
+							<h6>②华丽高雅的经典</h6>
+								<p style="text-indent:2em;">源于对欧洲建筑、文学、绘画甚至音乐艺术的敬仰与坚持，苏幕家居产品凸显了富有节奏感的欧式韵律美曲线条，并采用贴金箔、镀银等工艺装饰，富丽堂皇，
+								艺术感极强，整体造型华丽雅致，彰显品质高贵生活。</p>
 						</p>
 					</div>
 					<div class="about-counter pt-30 mt-50">
@@ -160,7 +117,7 @@
 									</div>
 									<div class="content">
 										<h4><span class="odometer" data-count="520">00</span>+</h4>
-										<p>Projects</p>
+										<p>专案</p>
 									</div>
 								</div>
 							</div>
@@ -170,8 +127,8 @@
 										<i class="far fa-bullhorn"></i>
 									</div>
 									<div class="content">
-										<h4>$<span class="odometer" data-count="4">00</span>M</h4>
-										<p>Revenue</p>
+										<h4>$<span class="odometer" data-count="4">00</span>中上等</h4>
+										<p>收入</p>
 									</div>
 								</div>
 							</div>
@@ -182,7 +139,7 @@
 									</div>
 									<div class="content">
 										<h4><span class="odometer" data-count="250">00</span>+</h4>
-										<p>Awards</p>
+										<p>获奖情况</p>
 									</div>
 								</div>
 							</div>
@@ -205,7 +162,7 @@
 						</div>
 						<div class="content">
 							<h4><span class="odometer" data-count="99">00</span>%</h4>
-							<p>Satisﬁed Clients Rate</p>
+							<p>客户满意率</p>
 						</div>
 					</div>
 				</div>
@@ -216,7 +173,7 @@
 						</div>
 						<div class="content">
 							<h4><span class="odometer" data-count="5020">00</span>%</h4>
-							<p>Products Delivered</p>
+							<p>产品交付</p>
 						</div>
 					</div>
 				</div>
@@ -227,7 +184,7 @@
 						</div>
 						<div class="content">
 							<h4><span class="odometer" data-count="23">00</span>%</h4>
-							<p>Daily Working Time</p>
+							<p>每日工作时间</p>
 						</div>
 					</div>
 				</div>
@@ -238,7 +195,7 @@
 						</div>
 						<div class="content">
 							<h4><span class="odometer" data-count="140">00</span>%</h4>
-							<p>Brands in Store</p>
+							<p>店内品牌</p>
 						</div>
 					</div>
 				</div>
@@ -248,90 +205,7 @@
 	<!-- counter-area end -->
 
 	<!-- team-area start -->
-	<div class="team-area pt-120 ">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-4">
-					<div class="team-text mb-50">
-						<h4>Our Team</h4>
-						<p>
-							Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit, sed do eiusmod tempor inciLorem
-							ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-							laboris nisi ut aliquip ex ea commodo consequat.
-						</p>
-						<a href="#" class="read-more">
-							Join With US <i class="far fa-long-arrow-right"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-xl-4 col-md-6">
-					<div class="team-wrap mb-100">
-						<div class="thumb">
-							<img src=" ${pageContext.request.contextPath}/statices/assets/img/team/team-1.jpg" alt="team">
-						</div>
-						<div class="content">
-							<div class="team-author">
-								<h4>Eliza Elliot</h4>
-								<span>Commodo tempor </span>
-							</div>
-							<div class="team-links">
-								<a href="#"><i class="fab fa-instagram"></i></a>
-								<a href="#"><i class="fab fa-google-plus-g"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="team-wrap mb-100">
-						<div class="thumb">
-							<img src=" ${pageContext.request.contextPath}/statices/assets/img/team/team-3.jpg" alt="team">
-						</div>
-						<div class="content">
-							<div class="team-author">
-								<h4>Ruby M. </h4>
-								<span>Commodo tempor </span>
-							</div>
-							<div class="team-links">
-								<a href="#"><i class="fab fa-instagram"></i></a>
-								<a href="#"><i class="fab fa-google-plus-g"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-md-6">
-					<div class="team-wrap mb-100">
-						<div class="thumb">
-							<img src=" ${pageContext.request.contextPath}/statices/assets/img/team/team-2.jpg" alt="team">
-						</div>
-						<div class="content">
-							<div class="team-author">
-								<h4>Roscoe A.</h4>
-								<span>Commodo tempor </span>
-							</div>
-							<div class="team-links">
-								<a href="#"><i class="fab fa-instagram"></i></a>
-								<a href="#"><i class="fab fa-google-plus-g"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="team-wrap mb-100">
-						<div class="thumb">
-							<img src=" ${pageContext.request.contextPath}/statices/assets/img/team/team-4.jpg" alt="team">
-						</div>
-						<div class="content">
-							<div class="team-author">
-								<h4>Marie F. Bloss</h4>
-								<span>Commodo tempor </span>
-							</div>
-							<div class="team-links">
-								<a href="#"><i class="fab fa-instagram"></i></a>
-								<a href="#"><i class="fab fa-google-plus-g"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<!-- team-area end -->
 
 	<!-- blog-area start -->
@@ -340,87 +214,39 @@
 			<div class="row justify-content-center mb-30">
 				<div class="col-xl-7 col-md-7 text-xl-left text-lg-left text-md-left text-center">
 					<div class="section-title-2">
-						<h3 class="title">Our Insights & Articles</h3>
+						<h3 class="title">用户的见解和文章</h3>
 					</div>
 				</div>
 				<div class="col-xl-5 col-md-5 text-xl-right text-lg-right text-md-right text-center">
 					<div class="view-more view-more-3">
-						<a href="#">View All <i class="far fa-angle-right"></i></a>
+						<a href="${pageContext.request.contextPath}/user/user_blog">查看全部 <i class="far fa-angle-right"></i></a>
 					</div>
 				</div>
 			</div>
 			<div class="row position-relative mb--170">
-				<div class="col-xl-4 col-md-6">
-					<div class="blog-wrap-2 blog-style-2 mb-30">
-						<div class="blog-thumb">
-							<img src=" ${pageContext.request.contextPath}/statices/assets/img/blog/blog-7.jpg" alt="blog">
-						</div>
-						<div class="blog-content">
-							<div class="blog-meta">
-								<span>NEWS</span>
+				<c:forEach items="${Blog}" var="blog">
+					<div class="col-xl-4 col-md-6">
+						<div class="blog-wrap-2 blog-style-2 mb-30">
+							<div class="blog-thumb">
+								<img
+									src="${pageContext.request.contextPath}/statices/file/${blog.blogPhoto}" alt="blog">
 							</div>
-							<div class="blog-title">
-								<h4>
-									<a href="blog-details.html">
-										Diusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-										veniam
-									</a>
-								</h4>
-							</div>
-							<div class="blog-footer">
-								<span><i class="far fa-calendar-alt"></i> 28 JANUARY, 2020</span>
-								<span><i class="far fa-user"></i> BY ADMIN</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-md-6">
-					<div class="blog-wrap-2 blog-style-2 mb-30">
-						<div class="blog-thumb">
-							<img src=" ${pageContext.request.contextPath}/statices/assets/img/blog/blog-8.jpg" alt="blog">
-						</div>
-						<div class="blog-content">
-							<div class="blog-meta">
-								<span>NEWS</span>
-							</div>
-							<div class="blog-title">
-								<h4>
-									<a href="blog-details.html">
-										Aonsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore
-									</a>
-								</h4>
-							</div>
-							<div class="blog-footer">
-								<span><i class="far fa-calendar-alt"></i> 28 JANUARY, 2020</span>
-								<span><i class="far fa-user"></i> BY ADMIN</span>
+							<div class="blog-content">
+								<div class="blog-meta">
+									<span>NEWS</span>
+								</div>
+								<div class="blog-title">
+									<h4>
+										<a href="blog-details.html"> <a href="${pageContext.request.contextPath}/user/user_blog_details/${blog.blogId }">${blog.blogTitle}</a>
+									</h4>
+								</div>
+								<div class="blog-footer">
+									<span><i class="far fa-calendar-alt"></i> ${blog.blogCreateDate}</span> <span><i class="far fa-user"></i> BY ${blog.userAlice}</span>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xl-4 col-md-6">
-					<div class="blog-wrap-2 blog-style-2 mb-30">
-						<div class="blog-thumb">
-							<img src=" ${pageContext.request.contextPath}/statices/assets/img/blog/blog-9.jpg" alt="blog">
-						</div>
-						<div class="blog-content">
-							<div class="blog-meta">
-								<span>NEWS</span>
-							</div>
-							<div class="blog-title">
-								<h4>
-									<a href="blog-details.html">
-										Rncididunt ut labore et dolore magna aliqua. Ut enim labore et dolore
-									</a>
-								</h4>
-							</div>
-							<div class="blog-footer">
-								<span><i class="far fa-calendar-alt"></i> 28 JANUARY, 2020</span>
-								<span><i class="far fa-user"></i> BY ADMIN</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

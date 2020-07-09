@@ -72,7 +72,7 @@
     <span class="errorTitle">Oh，这里有一些错误 :(</span>
     <span class="errorNum">500</span>
     <span class="errorDesc"><%=exception %></span>
-    <a href="${pageContext.request.contextPath}/" title="" class="button dredB"><span>返回首页</span></a>
+    <a href="${pageContext.request.contextPath}/user/user_index" title="" class="button dredB"><span>返回首页</span></a>
 </div>    
 
 </body>

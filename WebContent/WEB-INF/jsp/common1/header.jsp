@@ -5,14 +5,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!-- header-area start -->
 
-<%
-if(session.getAttribute("loginer")!=null){
-User login =(User)session.getAttribute("loginer");
-%>
-<div id="userId" style="display: none;" userId ="<%=login.getUserId() %>"> </div>
-<% }else{%>
-<div id="userId" style="display: none;" userId =" "> </div>
-<%} %>
+<c:choose>
+	<c:when test="${!empty loginer }">
+		<div id="userId" style="display: none;" userId ="${loginer.userId}"> </div>
+	</c:when>
+    <c:otherwise>
+		<div id="userId" style="display: none;" userId =" "> </div>
+	</c:otherwise>
+</c:choose>
 <header class="header-area header-style-3">
 	<div class="header-top">
 		<div class="container-fluid">
@@ -33,14 +33,14 @@ User login =(User)session.getAttribute("loginer");
 						<ul>
 							
 							<li>
-								<a href="${pageContext.request.contextPath}/user/user_index">Home</a>
+								<a href="${pageContext.request.contextPath}/user/user_index">家</a>
 							</li>
-							<li><a href="${pageContext.request.contextPath}/user/user_about">About</a></li>
+							<li><a href="${pageContext.request.contextPath}/user/user_about">关于我们</a></li>
 							<li class="has-dropdown">
-								<a href="product-grid.html">Shop</a>
+								<a href="${pageContext.request.contextPath}/user/user_product_grid">店</a>
 								<ul class="sub-menu">
-									<li><a href="${pageContext.request.contextPath}/user/user_product_grid">Shop List</a></li>
-									<li><a href="wish-list.html">Wish List</a></li>
+									<li><a href="${pageContext.request.contextPath}/user/user_product_grid">商店网格</a></li>
+									<li><a href="wish-list.html">收藏清单</a></li>
 								</ul>
 							</li>
 							<!--
@@ -53,28 +53,28 @@ User login =(User)session.getAttribute("loginer");
 							</li>
 							-->
 							<li class="has-dropdown">
-								<a href="blog.html">Blog</a>
+								<a href="${pageContext.request.contextPath}/user/user_blog">博客</a>
 								<ul class="sub-menu">
-									<li><a href="${pageContext.request.contextPath}/user/user_blog">Blog</a></li>
-									<li><a href="${pageContext.request.contextPath}/user/user_blog_message">Write Blog</a></li>
+									<li><a href="${pageContext.request.contextPath}/user/user_blog">博客</a></li>
+									<li><a href="${pageContext.request.contextPath}/user/user_blog_message">发表博客</a></li>
 								</ul>
 							</li>
-							<li><a href="${pageContext.request.contextPath}/user/user_contact">Contact</a></li>
+							<li><a href="${pageContext.request.contextPath}/user/user_contact">联系我们</a></li>
 							
 							<li>
 							<c:if test="${!empty loginer }">
 								<span>${loginer.userAlice }</span>
 							</c:if>
 							<c:if test="${empty loginer }">
-								<a href="${pageContext.request.contextPath}/user/user_logon" style="display:inline;">Regist</a>/
+								<a href="${pageContext.request.contextPath}/user/user_logon" style="display:inline;">注册</a>/
 							</c:if>
 							<c:choose>
                     			<c:when test="${empty loginer }">
-									<a href="${pageContext.request.contextPath}/user/user_login" style="display:inline;">Login</a>
+									<a href="${pageContext.request.contextPath}/user/user_login" style="display:inline;">登录</a>
 								</c:when>
                     			<c:otherwise>
-									/<a href="${pageContext.request.contextPath}/user/user_alter_psw" style="display:inline;">AlterPsw</a>
-									/<a href="${pageContext.request.contextPath}/user/loginout" style="display:inline;">LoginOut</a>
+									/<a href="${pageContext.request.contextPath}/user/user_alter_psw" style="display:inline;">修改密码</a>
+									/<a href="${pageContext.request.contextPath}/user/loginout" style="display:inline;">登出</a>
 								</c:otherwise>
                    	 		</c:choose>
 							</li>
@@ -144,6 +144,7 @@ User login =(User)session.getAttribute("loginer");
 			</div>
 		</div>
 	</div>
+</aside>
 	<!-- offset-sidebar end -->
 <!-- 
 	<script type="text/javascript">

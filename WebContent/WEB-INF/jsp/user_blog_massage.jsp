@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href=" ${pageContext.request.contextPath}/statices/assets/css/spacing.css">
 	<link rel="stylesheet" href=" ${pageContext.request.contextPath}/statices/assets/css/main.css">
 
-	<title>Glee - Multipurpose WooCommerce HTML Template</title>
+	<title>苏慕家居</title>
 </head>
 
 <body class="home-page-3">
@@ -33,218 +33,9 @@
 		<span></span>
 	</div>
 </div>
-<!-- preloader end  -->
-<header class="header-area header-style-3">
-	<div class="header-top">
-		<div class="container-fluid">
-			<div class="row align-items-center">
-				<div class="col-xl-3 col-lg-3 col-md-4 col-6">
-					<div class="logo">
-						<a href="index.html">
-
-
-
-							<img src="${pageContext.request.contextPath}/statices/assets/img/logo/logo-3.png" alt="logo">
-
-						</a>
-					</div>
-				</div>
-				<div class="col-xl-6 d-none d-xl-block">
-					<nav class="main-menu">
-						<ul>
-							
-							<li>
-								<a href="${pageContext.request.contextPath}/user/user_index">Home</a>
-							</li>
-							<li><a href="${pageContext.request.contextPath}/user/user_about">About</a></li>
-							<li class="has-dropdown">
-								<a href="product-grid.html">Shop</a>
-								<ul class="sub-menu">
-									<li><a href="${pageContext.request.contextPath}/user/user_product_grid">Product List</a></li>
-									<li><a href="wish-list.html">Wish List</a></li>
-								</ul>
-							</li>
-							<!--
-							<li class="has-dropdown">
-								<a href="#">Pages</a>
-								<ul class="sub-menu">
-									<li><a href="faq.html">Faq</a></li>
-									<li><a href="terms.html">Terms</a></li>
-								</ul>
-							</li>
-							-->
-							<li class="has-dropdown">
-								<a href="blog.html">Blog</a>
-								<ul class="sub-menu">
-									<li><a href="${pageContext.request.contextPath}/user/user_blog">Blog</a></li>
-									<li><a href="${pageContext.request.contextPath}/user/user_blog_message">Write Blog</a></li>
-								</ul>
-							</li>
-							<li><a href="${pageContext.request.contextPath}/user/user_contact">Contact</a></li>
-							
-							<li>
-							<c:if test="${!empty loginer }">
-								<span>${loginer.userAlice }</span>
-							</c:if>
-							<c:if test="${empty loginer }">
-								<a href="${pageContext.request.contextPath}/user/user_logon" style="display:inline;">Regist</a>/
-							</c:if>
-							<c:choose>
-                    			<c:when test="${empty loginer }">
-									<a href="${pageContext.request.contextPath}/user/user_login" style="display:inline;">Login</a>
-								</c:when>
-                    			<c:otherwise>
-									/<a href="${pageContext.request.contextPath}/user/user_alter_psw" style="display:inline;">AlterPsw</a>
-									/<a href="${pageContext.request.contextPath}/user/loginout" style="display:inline;">LoginOut</a>
-								</c:otherwise>
-                   	 		</c:choose>
-							</li>
-						</ul>
-					</nav>
-				</div>
-				<div class="col-xl-3 col-lg-9 col-md-8 col-6 d-flex justify-content-end align-items-center">
-					<div class="header-search"style="margin-right: 20px;">
-						<a href="javascript:void(0);"><i class="far fa-search"></i></a>
-					</div>
-					<div class="hamburger-menu">
-						<a href="#" onclick="goods()">
-							<svg width="1px" height="21px">
-								<path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-								      <li>
-								      		<a href="#">
-								      			<i class="far fa-shopping-cart"></i>
-								      		</a>
-								      </li>
-							</svg>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
-<%-- <!-- header-area start -->
 <%@ include file="common1/header.jsp" %>
 <!-- header-area end -->
- --%>
-<!-- slide-bar start -->
-<aside class="slide-bar">
-	<div class="close-mobile-menu">
-		<a href="javascript:void(0);"><i class="fas fa-times"></i></a>
-	</div>
-
-	<!-- offset-sidebar start -->
-	<div class="offset-sidebar">
-		<div class="offset-widget offset-logo">
-			<a href="index.html">
-				<img src=" ${pageContext.request.contextPath}/statices/assets/img/logo/logo-3.png" alt="logo">
-			</a>
-		</div>
-		<div class="offset-widget">
-			<div class="info-widget">
-				<h4 class="widget-title">Office Address</h4>
-				<p>
-					23/A, Miranda City Likaoli Prikano, Dope
-				</p>
-			</div>
-		</div>
-		<div class="offset-widget">
-			<div class="info-widget">
-				<h4 class="widget-title">Phone Number</h4>
-				<p> +0989 7876 9865 9 </p>
-				<p> +(090) 8765 86543 85 </p>
-			</div>
-		</div>
-		<div class="offset-widget">
-			<div class="info-widget">
-				<h4 class="widget-title">Email Address</h4>
-				<p> info@example.com </p>
-				<p> example.mail@hum.com </p>
-			</div>
-		</div>
-		<div class="offset-widget">
-			<div class="instagram">
-				<a href="#">
-					<img src=" ${pageContext.request.contextPath}/statices/assets/img/category/cat-1.jpg" alt="cat">
-				</a>
-				<a href="#">
-					<img src=" ${pageContext.request.contextPath}/statices/assets/img/category/cat-2.jpg" alt="cat">
-				</a>
-				<a href="#">
-					<img src=" ${pageContext.request.contextPath}/statices/assets/img/category/cat-3.jpg" alt="cat">
-				</a>
-				<a href="#">
-					<img src=" ${pageContext.request.contextPath}/statices/assets/img/category/cat-2.jpg" alt="cat">
-				</a>
-				<a href="#">
-					<img src=" ${pageContext.request.contextPath}/statices/assets/img/category/cat-3.jpg" alt="cat">
-				</a>
-				<a href="#">
-					<img src=" ${pageContext.request.contextPath}/statices/assets/img/category/cat-1.jpg" alt="cat">
-				</a>
-			</div>
-		</div>
-		<div class="offset-widget">
-			<div class="social-widget">
-				<a href="#">
-					<i class="fab fa-facebook-f"></i>
-				</a>
-				<a href="#">
-					<i class="fab fa-twitter"></i>
-				</a>
-				<a href="#">
-					<i class="fab fa-google-plus-g"></i>
-				</a>
-				<a href="#">
-					<i class="fab fa-instagram"></i>
-				</a>
-			</div>
-		</div>
-	</div>
-	<!-- offset-sidebar end -->
-
-	<!-- side-mobile-menu start -->
-	<nav class="side-mobile-menu">
-		<ul id="mobile-menu-active">
-			<li class="has-dropdown">
-				<a href="index.html">Home</a>
-				<ul class="sub-menu">
-					<li><a href="index.html">Home 1</a></li>
-					<li><a href="index-2.html">Home 2</a></li>
-					<li><a href="index-3.html">Home 3</a></li>
-					<li><a href="index-4.html">Home 4</a></li>
-				</ul>
-			</li>
-			<li><a href="about.html">About</a></li>
-			<li class="has-dropdown">
-				<a href="product-grid.html">Shop</a>
-				<ul class="sub-menu">
-					<li><a href="product-grid.html">Shop Grid</a></li>
-					<li><a href="product-list.html">Shop List</a></li>
-					<li><a href="product-single.html">Shop Details</a></li>
-					<li><a href="wish-list.html">Wish List</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="#">Pages</a>
-				<ul class="sub-menu">
-					<li><a href="faq.html">Faq</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="terms.html">Terms</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="blog.html">Blog</a>
-				<ul class="sub-menu">
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="blog-details.html">Blog Details</a></li>
-				</ul>
-			</li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-	</nav>
-	<!-- side-mobile-menu end -->
-</aside>
+<
 <div class="body-overlay"></div>
 <!-- slide-bar end -->
 
@@ -279,10 +70,10 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
 					<div class="breadcrumb-content">
-						<h3 class="title">Blog Details</h3>
+						<h3 class="title">发表博客</h3>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li class="active">Blog Details</li>
+							<li><a href="${pageContext.request.contextPath}/user/user_index">家</a></li>
+							<li class="active">发表博客</li>
 						</ul>
 					</div>
 				</div>
@@ -350,69 +141,26 @@
 						
 						<div class="widget-wrap mb-40">
 							<h4 class="widget-title">
-								Recent Posts
+								最近的博客信息
 							</h4>
 							<div class="recent-post-widget">
+								<c:forEach items="${Blog}" var="blog">	
 								<div class="recent-post">
 									<div class="recent-thumb">
 										<a href="blog-details.html">
-											<img src=" ${pageContext.request.contextPath}/statices/assets/img/blog/blog-17.jpg" alt="blog-widget">
+											<img src=" ${pageContext.request.contextPath}/statices/file/${blog.blogPhoto}" alt="blog-widget">
 										</a>
 									</div>
 									<div class="recent-details">
 										<h4>
-											<a href="blog-details.html">
-												Corem ipsum dolor tetur adipisicing elit
+											<a href="${pageContext.request.contextPath}/user/user_blog_details/${blog.blogId }">
+												${blog.blogTitle }
 											</a>
 										</h4>
-										<span><i class="fal fa-calendar-alt"></i> 28 JANUARY, 2020</span>
+										<span><i class="fal fa-calendar-alt"></i> ${blog.blogCreateDate }</span>
 									</div>
 								</div>
-								<div class="recent-post">
-									<div class="recent-thumb">
-										<a href="blog-details.html">
-											<img src=" ${pageContext.request.contextPath}/statices/assets/img/blog/blog-18.jpg" alt="blog-widget">
-										</a>
-									</div>
-									<div class="recent-details">
-										<h4>
-											<a href="blog-details.html">
-												Corem ipsum dolor tetur adipisicing elit
-											</a>
-										</h4>
-										<span><i class="fal fa-calendar-alt"></i> 28 JANUARY, 2020</span>
-									</div>
-								</div>
-								<div class="recent-post">
-									<div class="recent-thumb">
-										<a href="blog-details.html">
-											<img src=" ${pageContext.request.contextPath}/statices/assets/img/blog/blog-19.jpg" alt="blog-widget">
-										</a>
-									</div>
-									<div class="recent-details">
-										<h4>
-											<a href="blog-details.html">
-												Corem ipsum dolor tetur adipisicing elit
-											</a>
-										</h4>
-										<span><i class="fal fa-calendar-alt"></i> 28 JANUARY, 2020</span>
-									</div>
-								</div>
-								<div class="recent-post">
-									<div class="recent-thumb">
-										<a href="blog-details.html">
-											<img src=" ${pageContext.request.contextPath}/statices/assets/img/blog/blog-20.jpg" alt="blog-widget">
-										</a>
-									</div>
-									<div class="recent-details">
-										<h4>
-											<a href="blog-details.html">
-												Corem ipsum dolor tetur adipisicing elit
-											</a>
-										</h4>
-										<span><i class="fal fa-calendar-alt"></i> 28 JANUARY, 2020</span>
-									</div>
-								</div>
+							</c:forEach>
 							</div>
 						</div>
 						</div>

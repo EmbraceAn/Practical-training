@@ -33,7 +33,7 @@
 	   }
 
 </script>
-	<title>Glee - Multipurpose WooCommerce HTML Template</title>
+	<title>苏慕家居</title>
 </head>
 
 <body class="home-page-3">
@@ -48,52 +48,7 @@
 
 <!-- header-area start -->
 <%@ include file="common1/header.jsp" %>
-<!-- header-area end -->
 
-
-
-	<!-- side-mobile-menu start -->
-	<nav class="side-mobile-menu">
-		<ul id="mobile-menu-active">
-			<li class="has-dropdown">
-				<a href="index.html">Home</a>
-				<ul class="sub-menu">
-					<li><a href="index.html">Home 1</a></li>
-					<li><a href="index-2.html">Home 2</a></li>
-					<li><a href="index-3.html">Home 3</a></li>
-					<li><a href="index-4.html">Home 4</a></li>
-				</ul>
-			</li>
-			<li><a href="about.html">About</a></li>
-			<li class="has-dropdown">
-				<a href="product-grid.html">Shop</a>
-				<ul class="sub-menu">
-					<li><a href="product-grid.html">Shop Grid</a></li>
-					<li><a href="product-list.html">Shop List</a></li>
-					<li><a href="product-single.html">Shop Details</a></li>
-					<li><a href="wish-list.html">Wish List</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="#">Pages</a>
-				<ul class="sub-menu">
-					<li><a href="faq.html">Faq</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="terms.html">Terms</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="blog.html">Blog</a>
-				<ul class="sub-menu">
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="blog-details.html">Blog Details</a></li>
-				</ul>
-			</li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-	</nav>
-	<!-- side-mobile-menu end -->
-</aside>
 <div class="body-overlay"></div>
 <!-- slide-bar end -->
 
@@ -128,10 +83,10 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
 					<div class="breadcrumb-content">
-						<h3 class="title">注册</h3>
+						<h3 class="title">忘记密码</h3>
 						<ul>
-							<li><a href="index.html">首页</a></li>
-							<li class="active">登陆</li>
+							<li><a href="${pageContext.request.contextPath}/user/user_index">家</a></li>
+							<li class="active">忘记密码</li>
 						</ul>
 					</div>
 				</div>

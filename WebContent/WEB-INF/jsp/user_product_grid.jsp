@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/statices/assets/css/spacing.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/statices/assets/css/main.css">
 
-	<title>Glee - Multipurpose WooCommerce HTML Template</title>
+	<title>苏慕家居</title>
 	<style type="text/css">
 	.disable {
 	pointer-events: none;
@@ -41,52 +41,7 @@
 
 <!-- header-area start -->
 <%@ include file="common1/header.jsp" %>
-<!-- header-area end -->
 
-
-
-	<!-- side-mobile-menu start -->
-	<nav class="side-mobile-menu">
-		<ul id="mobile-menu-active">
-			<li class="has-dropdown">
-				<a href="index.html">Home</a>
-				<ul class="sub-menu">
-					<li><a href="index.html">Home 1</a></li>
-					<li><a href="index-2.html">Home 2</a></li>
-					<li><a href="index-3.html">Home 3</a></li>
-					<li><a href="index-4.html">Home 4</a></li>
-				</ul>
-			</li>
-			<li><a href="about.html">About</a></li>
-			<li class="has-dropdown">
-				<a href="product-grid.html">Shop</a>
-				<ul class="sub-menu">
-					<li><a href="product-grid.html">Shop Grid</a></li>
-					<li><a href="product-list.html">Shop List</a></li>
-					<li><a href="product-single.html">Shop Details</a></li>
-					<li><a href="wish-list.html">Wish List</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="#">Pages</a>
-				<ul class="sub-menu">
-					<li><a href="faq.html">Faq</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="terms.html">Terms</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="blog.html">Blog</a>
-				<ul class="sub-menu">
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="blog-details.html">Blog Details</a></li>
-				</ul>
-			</li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-	</nav>
-	<!-- side-mobile-menu end -->
-</aside>
 <div class="body-overlay"></div>
 <!-- slide-bar end -->
 
@@ -121,10 +76,10 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
 					<div class="breadcrumb-content">
-						<h3 class="title">Product Grid</h3>
+						<h3 class="title">商店网格</h3>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li class="active">Product Grid</li>
+							<li><a href="${pageContext.request.contextPath}/user/user_index">家</a></li>
+							<li class="active">商店网格</li>
 						</ul>
 					</div>
 				</div>
@@ -140,7 +95,7 @@
 				<div class="col-xl-3 col-lg-3">
 					<div class="product-sidebar">
 						<div class="product-widget product-category mb-60">
-							<h4 class="widget-title">category</h4>
+							<h4 class="widget-title">类别</h4>
 							<ul>
 							<c:forEach items="${categories }" var="ctg">
                     			<li><a href="${pageContext.request.contextPath}/user/user_product_grid?categoryId=${ctg.catId}"> ${ctg.catName } <i class="far fa-angle-right"></i></a></li>
@@ -148,7 +103,7 @@
 							</ul>
 						</div>
 						<div class="product-widget mb-60">
-							<h4 class="widget-title">price</h4>
+							<h4 class="widget-title">价钱</h4>
 							<div class="shop-filter">
 								<div class="input-wrap">
 									<input type="range" min="1" max="300" value="29" class="slider">
@@ -156,76 +111,6 @@
 								<div class="price-range">
 									<span class="min-price">$100.00</span>
 									<span class="max-price">$500.00</span>
-								</div>
-							</div>
-						</div>
-				
-						<div class="product-widget recent-product-widget mb-60">
-							<h4 class="widget-title">recent products</h4>
-							<div class="w-product-wrap">
-								<div class="thumb">
-									<img src="${pageContext.request.contextPath}/statices/assets/img/product/product-56.jpg" alt="product">
-
-								</div>
-								<div class="content">	
-									<h5><a href="#">Pendant lamp</a></h5>
-									<ul class="rating">
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-									<span class="price">$20</span>
-								</div>
-							</div>
-							<div class="w-product-wrap">
-								<div class="thumb">
-									<img src="${pageContext.request.contextPath}/statices/assets/img/product/product-57.jpg" alt="product">
-
-								</div>
-								<div class="content">
-									<h5><a href="#">Pendant lamp</a></h5>
-									<ul class="rating">
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-									<span class="price">$20</span>
-								</div>
-							</div>
-							<div class="w-product-wrap">
-								<div class="thumb">
-									<img src="${pageContext.request.contextPath}/statices/assets/img/product/product-57.jpg" alt="product">
-								</div>
-								<div class="content">
-									<h5><a href="#">Pendant lamp</a></h5>
-									<ul class="rating">
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-									<span class="price">$20</span>
-								</div>
-							</div>
-							<div class="w-product-wrap">
-								<div class="thumb">
-									<img src="${pageContext.request.contextPath}/statices/assets/img/product/product-58.jpg" alt="product">
-								</div>
-								<div class="content">
-									<h5><a href="#">Pendant lamp</a></h5>
-									<ul class="rating">
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li class="active"><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-									<span class="price">$20</span>
 								</div>
 							</div>
 						</div>

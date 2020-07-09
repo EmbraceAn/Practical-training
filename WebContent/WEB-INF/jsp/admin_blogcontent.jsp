@@ -4,7 +4,7 @@
     <!DOCTYPE HTML>
 <html>
   <head>
-    <title>苏幕窗帘后台管理系统</title>
+    <title>苏幕家居</title>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statices/css/mgr.css"/>
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statices/css/bootstrap.css"/>
   </head>  

@@ -6,7 +6,7 @@
 
 	<!-- 找回密码 -->
 	<select id="findUserPsw" parameterType="string" resultType="User">
-		select * from user where userPone=#{userPone}
+		select * from user where userPhone=#{userPhone}
 	</select>
 	<!-- 查询userid是否已被注册 -->
 	<select id="findUserByUserId" resultType="User">

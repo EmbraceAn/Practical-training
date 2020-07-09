@@ -2,6 +2,7 @@
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!doctype html>
+
 <html lang="en">
 <head>
 <!-- Required meta tags -->
@@ -33,7 +34,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/statices/assets/css/main.css">
 
-<title>Glee - Multipurpose WooCommerce HTML Template</title>
+<title>苏慕家居</title>
 </head>
 
 <body class="home-page-3">
@@ -48,43 +49,6 @@
 	<!-- header-area start -->
 	<%@ include file="common1/header.jsp"%>
 	<!-- header-area end -->
-
-
-
-	<!-- side-mobile-menu start -->
-	<nav class="side-mobile-menu">
-		<ul id="mobile-menu-active">
-			<li class="has-dropdown"><a href="index.html">Home</a>
-				<ul class="sub-menu">
-					<li><a href="index.html">Home 1</a></li>
-					<li><a href="index-2.html">Home 2</a></li>
-					<li><a href="index-3.html">Home 3</a></li>
-					<li><a href="index-4.html">Home 4</a></li>
-				</ul></li>
-			<li><a href="about.html">About</a></li>
-			<li class="has-dropdown"><a href="product-grid.html">Shop</a>
-				<ul class="sub-menu">
-					<li><a href="product-grid.html">Shop Grid</a></li>
-					<li><a href="product-list.html">Shop List</a></li>
-					<li><a href="product-single.html">Shop Details</a></li>
-					<li><a href="wish-list.html">Wish List</a></li>
-				</ul></li>
-			<li class="has-dropdown"><a href="#">Pages</a>
-				<ul class="sub-menu">
-					<li><a href="faq.html">Faq</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="terms.html">Terms</a></li>
-				</ul></li>
-			<li class="has-dropdown"><a href="blog.html">Blog</a>
-				<ul class="sub-menu">
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="blog-details.html">Blog Details</a></li>
-				</ul></li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-	</nav>
-	<!-- side-mobile-menu end -->
-	</aside>
 	<div class="body-overlay"></div>
 	<!-- slide-bar end -->
 
@@ -125,11 +89,9 @@
 										<div class="slider-content-3">
 											<h2 data-animation="fadeInUp" data-delay="0.3s">SMART
 												AND TRENDY</h2>
-											<p data-animation="fadeInUp" data-delay="0.6s">Dolor sit
-												amet, consectetur adipisicing elit, sed do eiusmod tempor
-												incididunt</p>
+											<p data-animation="fadeInUp" data-delay="0.6s">苏幕</p>
 											<a href="#" class="read-more" data-animation="fadeInUp"
-												data-delay="0.9s"> Shop Now <i
+												data-delay="0.9s"> 现在去购物 <i
 												class="far fa-long-arrow-right"></i>
 											</a>
 										</div>
@@ -150,11 +112,9 @@
 										<div class="slider-content-3">
 											<h2 data-animation="fadeInUp" data-delay="0.3s">SMART
 												AND TRENDY</h2>
-											<p data-animation="fadeInUp" data-delay="0.6s">Dolor sit
-												amet, consectetur adipisicing elit, sed do eiusmod tempor
-												incididunt</p>
+											<p data-animation="fadeInUp" data-delay="0.6s">苏幕</p>
 											<a href="#" class="read-more" data-animation="fadeInUp"
-												data-delay="0.9s"> Shop Now <i
+												data-delay="0.9s"> 现在去购物 <i
 												class="far fa-long-arrow-right"></i>
 											</a>
 										</div>
@@ -175,11 +135,9 @@
 										<div class="slider-content-3">
 											<h2 data-animation="fadeInUp" data-delay="0.3s">SMART
 												AND TRENDY</h2>
-											<p data-animation="fadeInUp" data-delay="0.6s">Dolor sit
-												amet, consectetur adipisicing elit, sed do eiusmod tempor
-												incididunt</p>
+											<p data-animation="fadeInUp" data-delay="0.6s">苏幕</p>
 											<a href="#" class="read-more" data-animation="fadeInUp"
-												data-delay="0.9s"> Shop Now <i
+												data-delay="0.9s"> 现在去购物 <i
 												class="far fa-long-arrow-right"></i>
 											</a>
 										</div>
@@ -213,8 +171,8 @@
 									alt="icon">
 							</div>
 							<div class="content">
-								<h4>Support 24/7.</h4>
-								<p>Contact us 24 hours a day, 7 days a week.</p>
+								<h4>支持24/7</h4>
+								<p>每周7天，每天24小时与我们联系</p>
 							</div>
 						</div>
 					</div>
@@ -226,8 +184,8 @@
 									alt="icon">
 							</div>
 							<div class="content">
-								<h4>Delivery.</h4>
-								<p>Free shipping on all US order.</p>
+								<h4>交货</h4>
+								<p>所有中国订单免费送货。</p>
 							</div>
 						</div>
 					</div>
@@ -239,8 +197,8 @@
 									alt="icon">
 							</div>
 							<div class="content">
-								<h4>100% Payment secure.</h4>
-								<p>We ensure secure payment with PEV.</p>
+								<h4>100％付款安全</h4>
+								<p>我们确保使用PEV安全付款</p>
 							</div>
 						</div>
 					</div>
@@ -255,7 +213,7 @@
 				<div class="row justify-content-center">
 					<div class="col-xl-8 text-center">
 						<div class="section-title-3 mb-10">
-							<h3 class="title">Products of the week</h3>
+							<h3 class="title">商品展示</h3>
 						</div>
 					</div>
 				</div>
@@ -270,7 +228,7 @@
 								<a
 									href="${pageContext.request.contextPath}/user/user_index?catName=${ctg.catName}&productName=无"
 									title="" data-filter=".chairs">${ctg.catName}</a>&nbsp;
-						</c:forEach>
+							</c:forEach>
 						</div>
 						<!-- filter-nav end -->
 					</div>
@@ -311,7 +269,7 @@
 
 		<!-- product-area end -->
 
-		<!-- video-area start -->
+		<!-- video-area start
 		<div class="video-area bg-fix pt-200 pb-200"
 			data-background="assets/img/thumb/thumb-6.jpg">
 			<div class="container">
@@ -326,6 +284,7 @@
 				</div>
 			</div>
 		</div>
+		 -->
 		<!-- video-area end -->
 
 		<!-- blog-area start -->
@@ -335,23 +294,23 @@
 					<div
 						class="col-xl-7 col-md-7 text-xl-left text-lg-left text-md-left text-center">
 						<div class="section-title-2">
-							<h3 class="title">Our Insights & Articles</h3>
+							<h3 class="title">用户的见解和文章</h3>
 						</div>
 					</div>
 					<div
 						class="col-xl-5 col-md-5 text-xl-right text-lg-right text-md-right text-center">
 						<div class="view-more view-more-3">
-							<a href="#">View All <i class="far fa-angle-right"></i></a>
+							<a href="${pageContext.request.contextPath}/user/user_blog">查看全部 <i class="far fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="row position-relative mb--170">
+				<c:forEach items="${Blog}" var="blog">
 					<div class="col-xl-4 col-md-6">
 						<div class="blog-wrap-2 blog-style-2 mb-30">
 							<div class="blog-thumb">
 								<img
-									src="${pageContext.request.contextPath}/statices/assets/img/blog/blog-7.jpg"
-									alt="blog">
+									src="${pageContext.request.contextPath}/statices/file/${blog.blogPhoto}" alt="blog">
 							</div>
 							<div class="blog-content">
 								<div class="blog-meta">
@@ -359,65 +318,16 @@
 								</div>
 								<div class="blog-title">
 									<h4>
-										<a href="blog-details.html"> Diusmod tempor incididunt ut
-											labore et dolore magna aliqua. Ut enim ad minim veniam </a>
+										<a href="blog-details.html"> <a href="${pageContext.request.contextPath}/user/user_blog_details/${blog.blogId }">${blog.blogTitle}</a>
 									</h4>
 								</div>
 								<div class="blog-footer">
-									<span><i class="far fa-calendar-alt"></i> 28 JANUARY,
-										2020</span> <span><i class="far fa-user"></i> BY ADMIN</span>
+									<span><i class="far fa-calendar-alt"></i> ${blog.blogCreateDate}</span> <span><i class="far fa-user"></i> BY ${blog.userAlice}</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-4 col-md-6">
-						<div class="blog-wrap-2 blog-style-2 mb-30">
-							<div class="blog-thumb">
-								<img
-									src="${pageContext.request.contextPath}/statices/assets/img/blog/blog-8.jpg"
-									alt="blog">
-							</div>
-							<div class="blog-content">
-								<div class="blog-meta">
-									<span>NEWS</span>
-								</div>
-								<div class="blog-title">
-									<h4>
-										<a href="blog-details.html"> Aonsectetur adipisicing elit,
-											sed do eiusmod tempor incididunt ut labore et dolore </a>
-									</h4>
-								</div>
-								<div class="blog-footer">
-									<span><i class="far fa-calendar-alt"></i> 28 JANUARY,
-										2020</span> <span><i class="far fa-user"></i> BY ADMIN</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-4 col-md-6">
-						<div class="blog-wrap-2 blog-style-2 mb-30">
-							<div class="blog-thumb">
-								<img
-									src="${pageContext.request.contextPath}/statices/assets/img/blog/blog-9.jpg"
-									alt="blog">
-							</div>
-							<div class="blog-content">
-								<div class="blog-meta">
-									<span>NEWS</span>
-								</div>
-								<div class="blog-title">
-									<h4>
-										<a href="blog-details.html"> Rncididunt ut labore et
-											dolore magna aliqua. Ut enim labore et dolore </a>
-									</h4>
-								</div>
-								<div class="blog-footer">
-									<span><i class="far fa-calendar-alt"></i> 28 JANUARY,
-										2020</span> <span><i class="far fa-user"></i> BY ADMIN</span>
-								</div>
-							</div>
-						</div>
-					</div>
+				</c:forEach>
 				</div>
 			</div>
 		</div>

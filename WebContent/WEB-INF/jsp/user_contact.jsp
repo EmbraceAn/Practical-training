@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href=" ${pageContext.request.contextPath}/statices/assets/css/spacing.css">
 	<link rel="stylesheet" href=" ${pageContext.request.contextPath}/statices/assets/css/main.css">
 
-	<title>Glee - Multipurpose WooCommerce HTML Template</title>
+	<title>苏慕家居</title>
 </head>
 
 <body class="home-page-3">
@@ -42,47 +42,7 @@
 
 
 	<!-- side-mobile-menu start -->
-	<nav class="side-mobile-menu">
-		<ul id="mobile-menu-active">
-			<li class="has-dropdown">
-				<a href="index.html">Home</a>
-				<ul class="sub-menu">
-					<li><a href="index.html">Home 1</a></li>
-					<li><a href="index-2.html">Home 2</a></li>
-					<li><a href="index-3.html">Home 3</a></li>
-					<li><a href="index-4.html">Home 4</a></li>
-				</ul>
-			</li>
-			<li><a href="about.html">About</a></li>
-			<li class="has-dropdown">
-				<a href="product-grid.html">Shop</a>
-				<ul class="sub-menu">
-					<li><a href="product-grid.html">Shop Grid</a></li>
-					<li><a href="product-list.html">Shop List</a></li>
-					<li><a href="product-single.html">Shop Details</a></li>
-					<li><a href="wish-list.html">Wish List</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="#">Pages</a>
-				<ul class="sub-menu">
-					<li><a href="faq.html">Faq</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="terms.html">Terms</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="blog.html">Blog</a>
-				<ul class="sub-menu">
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="blog-details.html">Blog Details</a></li>
-				</ul>
-			</li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-	</nav>
-	<!-- side-mobile-menu end -->
-</aside>
+	
 <div class="body-overlay"></div>
 <!-- slide-bar end -->
 
@@ -117,10 +77,10 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
 					<div class="breadcrumb-content">
-						<h3 class="title">Contact Us</h3>
+						<h3 class="title">联系我们</h3>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li class="active">Contact Us</li>
+							<li><a href="${pageContext.request.contextPath}/user/user_index">家</a></li>
+							<li class="active">联系我们</li>
 						</ul>
 					</div>
 				</div>
@@ -139,9 +99,9 @@
 							<img src=" ${pageContext.request.contextPath}/statices/assets/img/icon/icon-17.png" alt="icon">
 						</div>
 						<div class="details">
-							<h5>Address</h5>
+							<h5>地址</h5>
 							<ul>
-								<li>2416 Mapleview Drive Tampa, FL 33634</li>
+								<li>佛罗里达州坦帕市Mapleview大道2416号，邮编：33634</li>
 							</ul>
 						</div>
 					</div>
@@ -152,10 +112,9 @@
 							<img src=" ${pageContext.request.contextPath}/statices/assets/img/icon/icon-18.png" alt="icon">
 						</div>
 						<div class="details">
-							<h5>Our Email</h5>
+							<h5>邮件</h5>
 							<ul>
-								<li>Main Email : contact@website.com</li>
-								<li>Inquiries : Info@mail.com</li>
+								<li>contact@website.com</li>
 							</ul>
 						</div>
 					</div>
@@ -166,10 +125,9 @@
 							<img src=" ${pageContext.request.contextPath}/statices/assets/img/icon/icon-19.png" alt="icon">
 						</div>
 						<div class="details">
-							<h5>Our Phone</h5>
+							<h5>电话</h5>
 							<ul>
-								<li>Office Telephone : 0029129102320</li>
-								<li>Mobile : 000 2324 39493</li>
+								<li>办公电话 : 0029129102320</li>
 							</ul>
 						</div>
 					</div>
@@ -177,12 +135,12 @@
 			</div>
 			<div id="main">
 			<div class="section-left" style="width:100%;border:0px;">    	
-				<h2>Message List</h2>		
+				<h2>留言列表</h2>		
 				<table class="table" cellspacing="0" style="font-size: 12px;width:100%;">
 			    	<tr>
-			    		<td class="header" style="width:30%;">userId</td>
-			    		<td class="header" style="width:40%;">content</td>
-			    		<td class="header" style="width:30%;">messageCreateDate</td>
+			    		<td class="header" style="width:30%;">用户</td>
+			    		<td class="header" style="width:40%;">留言内容</td>
+			    		<td class="header" style="width:30%;">留言日期</td>
 			    	</tr> 
 			    	<c:forEach items="${Message}" var="msg">		    	
 			    	<tr>
@@ -205,25 +163,25 @@
 			<div class="row">
 				<div class="col-xl-6 col-lg-6">
 					<div class="contact-form-wrap">
-					<h2>Submit some messages to us</h2>
+					<h2>请留言</h2>
 					<font color="red"><h5>${param.error}</h5></font>
 						<form action="${pageContext.request.contextPath}/user/add_contact" method="post">
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="form-group">
-										<input type="text" name="userId" placeholder="Enter your full userId" cssClass="validate[required]">
+										<input type="text" name="userId" placeholder="请输入您的完整用户名" cssClass="validate[required]">
 										<span class="form-icon"><i class="fal fa-user"></i></span>
 									</div>
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group">
-										<input type="email" name="email" placeholder="Enter your email">
+										<input type="email" name="email" placeholder="请输入您的电子邮件">
 										<span class="form-icon"><i class="fal fa-envelope"></i></span>
 									</div>
 								</div>
 								<div class="col-lg-12">
 									<div class="form-group">
-										<textarea name="content" placeholder="Enter your message" cssClass="validate[required]" 
+										<textarea name="content" placeholder="请输入您的留言信息" cssClass="validate[required]" 
 										spellcheck="false"></textarea>
 										<span class="form-icon textarea-icon">
 											<i class="fal fa-comment-alt-dots"></i>
@@ -231,7 +189,7 @@
 									</div>
 								</div>
 								<div class="col-lg-12">
-								<input class="btn btn-theme" type="submit" value=" send message "  />
+								<input class="btn btn-theme" type="submit" value=" 留言 "  />
 									<!-- <button  type="submit">
 										
 									</button> -->
@@ -254,87 +212,39 @@
 			<div class="row justify-content-center mb-30">
 				<div class="col-xl-7 col-md-7 text-xl-left text-lg-left text-md-left text-center">
 					<div class="section-title-2">
-						<h3 class="title">Our Insights & Articles</h3>
+						<h3 class="title">用户的见解和文章</h3>
 					</div>
 				</div>
 				<div class="col-xl-5 col-md-5 text-xl-right text-lg-right text-md-right text-center">
 					<div class="view-more view-more-3">
-						<a href="#">View All <i class="far fa-angle-right"></i></a>
+						<a href="${pageContext.request.contextPath}/user/user_blog">查看全部 <i class="far fa-angle-right"></i></a>
 					</div>
 				</div>
 			</div>
 			<div class="row position-relative mb--170">
-				<div class="col-xl-4 col-md-6">
-					<div class="blog-wrap-2 blog-style-2 mb-30">
-						<div class="blog-thumb">
-							<img src=" ${pageContext.request.contextPath}/statices/assets/img/blog/blog-7.jpg" alt="blog">
-						</div>
-						<div class="blog-content">
-							<div class="blog-meta">
-								<span>NEWS</span>
+				<c:forEach items="${Blog}" var="blog">
+					<div class="col-xl-4 col-md-6">
+						<div class="blog-wrap-2 blog-style-2 mb-30">
+							<div class="blog-thumb">
+								<img
+									src="${pageContext.request.contextPath}/statices/file/${blog.blogPhoto}" alt="blog">
 							</div>
-							<div class="blog-title">
-								<h4>
-									<a href="blog-details.html">
-										Diusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-										veniam
-									</a>
-								</h4>
-							</div>
-							<div class="blog-footer">
-								<span><i class="far fa-calendar-alt"></i> 28 JANUARY, 2020</span>
-								<span><i class="far fa-user"></i> BY ADMIN</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-md-6">
-					<div class="blog-wrap-2 blog-style-2 mb-30">
-						<div class="blog-thumb">
-							<img src=" ${pageContext.request.contextPath}/statices/assets/img/blog/blog-8.jpg" alt="blog">
-						</div>
-						<div class="blog-content">
-							<div class="blog-meta">
-								<span>NEWS</span>
-							</div>
-							<div class="blog-title">
-								<h4>
-									<a href="blog-details.html">
-										Aonsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore
-									</a>
-								</h4>
-							</div>
-							<div class="blog-footer">
-								<span><i class="far fa-calendar-alt"></i> 28 JANUARY, 2020</span>
-								<span><i class="far fa-user"></i> BY ADMIN</span>
+							<div class="blog-content">
+								<div class="blog-meta">
+									<span>NEWS</span>
+								</div>
+								<div class="blog-title">
+									<h4>
+										<a href="blog-details.html"> <a href="${pageContext.request.contextPath}/user/user_blog_details/${blog.blogId }">${blog.blogTitle}</a>
+									</h4>
+								</div>
+								<div class="blog-footer">
+									<span><i class="far fa-calendar-alt"></i> ${blog.blogCreateDate}</span> <span><i class="far fa-user"></i> BY ${blog.userAlice}</span>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xl-4 col-md-6">
-					<div class="blog-wrap-2 blog-style-2 mb-30">
-						<div class="blog-thumb">
-							<img src=" ${pageContext.request.contextPath}/statices/assets/img/blog/blog-9.jpg" alt="blog">
-						</div>
-						<div class="blog-content">
-							<div class="blog-meta">
-								<span>NEWS</span>
-							</div>
-							<div class="blog-title">
-								<h4>
-									<a href="blog-details.html">
-										Rncididunt ut labore et dolore magna aliqua. Ut enim labore et dolore
-									</a>
-								</h4>
-							</div>
-							<div class="blog-footer">
-								<span><i class="far fa-calendar-alt"></i> 28 JANUARY, 2020</span>
-								<span><i class="far fa-user"></i> BY ADMIN</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

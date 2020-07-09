@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/statices/assets/css/spacing.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/statices/assets/css/main.css">
 
-	<title>Glee - Multipurpose WooCommerce HTML Template</title>
+	<title>苏慕家居</title>
 </head>
 
 <body class="home-page-3">
@@ -37,51 +37,7 @@
 
 <!-- header-area start -->
 <%@ include file="common1/header.jsp" %>
-<!-- header-area end -->
 
-
-	<!-- side-mobile-menu start -->
-	<nav class="side-mobile-menu">
-		<ul id="mobile-menu-active">
-			<li class="has-dropdown">
-				<a href="index.html">Home</a>
-				<ul class="sub-menu">
-					<li><a href="index.html">Home 1</a></li>
-					<li><a href="index-2.html">Home 2</a></li>
-					<li><a href="index-3.html">Home 3</a></li>
-					<li><a href="index-4.html">Home 4</a></li>
-				</ul>
-			</li>
-			<li><a href="about.html">About</a></li>
-			<li class="has-dropdown">
-				<a href="product-grid.html">Shop</a>
-				<ul class="sub-menu">
-					<li><a href="product-grid.html">Shop Grid</a></li>
-					<li><a href="product-list.html">Shop List</a></li>
-					<li><a href="product-single.html">Shop Details</a></li>
-					<li><a href="wish-list.html">Wish List</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="#">Pages</a>
-				<ul class="sub-menu">
-					<li><a href="faq.html">Faq</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="terms.html">Terms</a></li>
-				</ul>
-			</li>
-			<li class="has-dropdown">
-				<a href="blog.html">Blog</a>
-				<ul class="sub-menu">
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="blog-details.html">Blog Details</a></li>
-				</ul>
-			</li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-	</nav>
-	<!-- side-mobile-menu end -->
-</aside>
 <div class="body-overlay"></div>
 <!-- slide-bar end -->
 
@@ -116,10 +72,10 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
 					<div class="breadcrumb-content">
-						<h3 class="title">Login</h3>
+						<h3 class="title">登录</h3>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li class="active">Login</li>
+							<li><a href="${pageContext.request.contextPath}/user/user_index">家</a></li>
+							<li class="active">登录</li>
 						</ul>
 					</div>
 				</div>
@@ -139,36 +95,37 @@
 							<div class="row">
 								<div class="col-xl-12">
 									<div class="input-wrap">
-										<label for="userId">UserId *</label>
+										<label for="userId">账号 *</label>
 										<input name="userId" id="userId" type="text"/>
 									</div>
 								</div>
 								<div class="col-xl-12">
 									<div class="input-wrap">
-										<label for="userPsw">Password *</label>
+										<label for="userPsw">密码 *</label>
 										<input type="password" name="userPsw" id="userPsw"/>
 									</div>
 								</div>
 								<div class="col-xl-12">
 									<div class="input-wrap">
-										<button type="submit" class="submit-btn">Login</button>
+										<button type="submit" class="submit-btn">登录</button>
 									</div>
 								</div>
 								<div class="col-xl-6 col-md-6 col-6">
 									<div class="checkbox-wrap">
 										<input type="checkbox" id="remember">
-										<label for="remember">Remember me</label>
+										<label for="remember">记住</label>
 									</div>
 								</div>
 								<div class="col-xl-6 col-md-6 col-6">
 									<div class="label-text text-right">
-										<a href="#">忘记密码</a>
+										<a href="${pageContext.request.contextPath}/user/user_change">忘记密码</a>
 									</div>
 								</div>
 								<div class="col-xl-12">
 									<div class="create-info">
 										<span>没有账号？</span>
-										<button type="submit" class="create-btn">Create an account</button>
+										<button type="submit" class="create-btn">
+										<a href="${pageContext.request.contextPath}/user/user_logon">创建一个新账户</a></button>
 									</div>
 								</div>
 							</div>

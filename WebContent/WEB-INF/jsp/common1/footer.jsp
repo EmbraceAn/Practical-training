@@ -12,46 +12,30 @@
 							</a>
 						</div>
 						<ul>
-							<li>ADDRESS: 4772 Wines Lane Houston, TX 77032</li>
-							<li>Telephone: +832-347-5843</li>
-							<li>Email: contact@Glee.com</li>
+							<li>地址：德克萨斯州休斯敦Wines Lane 4772号，邮政编码77032</li>
+							<li>电话：+ 832-347-5843</li>
+							<li>电子邮件：contact@Glee.com</li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-xl-2 col-lg-2 col-md-4">
 					<div class="footer-widget links-widgets">
-						<h4 class="widget-title">Services</h4>
+						<h4 class="widget-title">服务</h4>
 						<ul>
-							<li><a href="#">Contact Us</a></li>
-							<li><a href="#">My account</a></li>
-							<li><a href="#">Customer Service</a></li>
-							<li><a href="#">Term & Condition</a></li>
-							<li><a href="#">FAQs</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-xl-2 col-lg-2 col-md-4">
-					<div class="footer-widget links-widgets">
-						<h4 class="widget-title">Account </h4>
-						<ul>
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">Instagram</a></li>
-							<li><a href="#">Dribbble</a></li>
-							<li><a href="#">Google Plus</a></li>
+							<li><a href="${pageContext.request.contextPath}/user/user_contact">联系我们</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-xl-5 col-lg-5 col-md-8">
 					<div class="footer-widget newsletter-widget">
-						<h4 class="widget-title">Newsletter</h4>
+						<h4 class="widget-title">通讯</h4>
 						<p>
-							Signup to be the first to hear <br> about exclusive deals.
+							注册成为第一个 <br> 了解独家优惠的人。
 						</p>
-						<form action="#">
+						<form action="${pageContext.request.contextPath}/user/user_logon">
 							<div class="input-wrap">
-								<input type="text" placeholder="Email">
-								<button>Subscribe</button>
+								<input type="text" placeholder="进行注册">
+								<button>订阅</button>
 							</div>
 						</form>
 					</div>
@@ -64,16 +48,15 @@
 			<div class="row footer-border pt-20 pb-20">
 				<div class="col-xl-6 col-lg-6 mb-md-10 mb-xs-10">
 					<div class="copyright">
-						©2020 Glee Store. All rights reserved.
+						©2020 苏幕家居。版权所有。
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-6">
 					<div class="footer-menu">
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="faq.html">FAQs</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
+							<li><a href="${pageContext.request.contextPath}/user/user_index">家</a></li>
+							<li><a href="${pageContext.request.contextPath}/user/user_about">关于我们</a></li>
+							<li><a href="${pageContext.request.contextPath}/user/user_contact">联系我们</a></li>
 						</ul>
 					</div>
 				</div>
